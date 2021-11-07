@@ -1,31 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rendertheme xmlns="http://mapsforge.org/renderTheme" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme ../renderTheme.xsd" version="1" map-background="#F8F8F8">
-	<!-- elevation countours -->
-	<!-- <rule e="way" k="contour" v="elevation">
-		<rule e="way" k="ele" v="100">
-			<line stroke="#A07F5F" stroke-width="1" />
-		</rule>
-	</rule> -->
-	<!-- <rule e="way" k="ele" v="100">
-		<line stroke="#A07F5F" stroke-width="1" />
-	</rule> -->
- 	<rule e="way" k="contour" v="*">
-		<line stroke="#A07F5F" stroke-width="1" />
+
+	<rule e="way" k="contour" v="*">
+		<line stroke="#A07F5F" stroke-width="0.8" stroke-linecap="butt" />
+	</rule>
+
+
+	<rule e="way" k="highway" v="residential">
+		<line stroke="#adadad" stroke-width="2" stroke-linecap="butt" />
+		<line stroke="#ffffff" stroke-width="1.5" stroke-linecap="butt" />
+	</rule>	
+	<rule e="way" k="highway" v="unclassified">
+		<line stroke="#adadad" stroke-width="2" stroke-linecap="butt" />
+		<line stroke="#ffffff" stroke-width="1.5" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="tertiary_link">
+		<line stroke="#adadad" stroke-width="2" stroke-linecap="butt" />
+		<line stroke="#ffffff" stroke-width="1.5" stroke-linecap="butt" />
+	</rule>	
+	<rule e="way" k="highway" v="tertiary">
+		<line stroke="#adadad" stroke-width="2" stroke-linecap="butt" />
+		<line stroke="#ffffff" stroke-width="1.5" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="secondary_link">
+		<line stroke="#adadad" stroke-width="2" stroke-linecap="butt" />
+		<line stroke="#ffffff" stroke-width="1.5" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="secondary">
+		<line stroke="#adadad" stroke-width="2" stroke-linecap="butt" />
+		<line stroke="#ffffff" stroke-width="1.5" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="primary_link">
+		<line stroke="#adadad" stroke-width="5" stroke-linecap="butt" />
+		<line stroke="#ffffff" stroke-width="4.5" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="primary">
+		<line stroke="#adadad" stroke-width="5" stroke-linecap="butt" />
+		<line stroke="#ffffff" stroke-width="4.5" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="trunk_link">
+		<line stroke="#adadad" stroke-width="5" stroke-linecap="butt" />
+		<line stroke="#ffffff" stroke-width="4.5" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="trunk">
+		<line stroke="#adadad" stroke-width="5" stroke-linecap="butt" />
+		<line stroke="#ffffff" stroke-width="4.5" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="motorway_link">
+		<line stroke="#adadad" stroke-width="5" stroke-linecap="butt" />
+		<line stroke="#ffffff" stroke-width="4.5" stroke-linecap="butt" />
+	</rule>	
+	<rule e="way" k="highway" v="motorway">
+		<line stroke="#adadad" stroke-width="5" stroke-linecap="butt" />
+		<line stroke="#ffffff" stroke-width="4.5" stroke-linecap="butt" />
 	</rule>
 	
-<!-- 	Nem működik...
-	<rule e="way" k="contour" v="100">
-		<line stroke="#A07F5F" stroke-width="1" />
-	</rule>
-	 -->
-	<!--<rule e="way" k="ele" v="*">
-		<line stroke="#A07F5F" stroke-width="2" />
-	</rule>-->
 	
-	<rule e="way" k="highway" v="*">
-		<line stroke="#000000" stroke-width="1" />
+	
+	<rule e="way" k="highway" v="living_street">
+		<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="service">
+		<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="pedestrian">
+		<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
 	</rule>
 	<rule e="way" k="highway" v="track">
-		<line stroke="#000000" stroke-width="1" />
+		<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="bus_guideway">
+		<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="escape">
+		<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="raceway">
+		<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="road">
+		<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="busway">
+		<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
+	</rule>
+	
+	<rule e="way" k="highway" v="footway">
+		<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="bridleway">
+		<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="steps">
+		<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="corridor">
+		<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="highway" v="path">
+		<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
+	</rule>
+	
+
+	<rule e="way" k="highway" v="cycleway">
+		<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
 	</rule>
 </rendertheme>
