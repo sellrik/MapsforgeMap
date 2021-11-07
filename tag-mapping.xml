@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tag-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-zoom-appear="16"
+    profile-name="default-profile" xmlns="http://mapsforge.org/tag-mapping"
+    xsi:schemaLocation="http://mapsforge.org/tag-mapping https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/tag-mapping.xsd">
+
+	<!-- Elevation countour lines -->
+	 <ways>
+        <!-- <osm-tag key="ele" value="100" zoom-appear="14" /> -->
+		
+		<!-- Ez működött, de nem volt részelets? -->
+		<osm-tag key="contour" value="elevation" zoom-appear="14" />
+		 -->
+    </ways>
+
+
+    <!-- ************* WAYS *************** -->
+
+    <!-- HIGHWAY TAGS -->
+    <ways>
+        <osm-tag key="highway" value="bridleway" zoom-appear="13" />
+        <osm-tag key="highway" value="bus_guideway" zoom-appear="13" />
+        <osm-tag key="highway" value="byway" zoom-appear="13" />
+        <osm-tag key="highway" value="construction" zoom-appear="13" />
+        <!-- <osm-tag key="highway" value="cycleway" zoom-appear="13" /> -->
+        <osm-tag key="highway" value="footway" zoom-appear="13" />
+        <osm-tag key="highway" value="living_street" zoom-appear="13" />
+        <osm-tag key="highway" value="motorway" zoom-appear="6" />
+        <osm-tag key="highway" value="motorway_link" zoom-appear="6" />
+        <osm-tag key="highway" value="path" zoom-appear="14" />
+        <osm-tag key="highway" value="pedestrian" zoom-appear="14" />
+        <osm-tag key="highway" value="primary" zoom-appear="8" />
+        <osm-tag key="highway" value="primary_link" zoom-appear="8" />
+        <osm-tag key="highway" value="raceway" zoom-appear="12" />
+        <osm-tag key="highway" value="residential" zoom-appear="12" />
+        <osm-tag key="highway" value="road" zoom-appear="12" />
+        <osm-tag key="highway" value="secondary" zoom-appear="12" />
+        <osm-tag key="highway" value="secondary_link" zoom-appear="12" />
+        <osm-tag key="highway" value="service" zoom-appear="14" />
+        <osm-tag key="highway" value="services" zoom-appear="14" />
+        <osm-tag key="highway" value="steps" zoom-appear="16" />
+        <osm-tag key="highway" value="tertiary" zoom-appear="12" />
+        <osm-tag key="highway" value="tertiary_link" zoom-appear="12" />
+        <osm-tag key="highway" value="track" zoom-appear="13" />
+        <osm-tag key="highway" value="trunk" zoom-appear="6" />
+        <osm-tag key="highway" value="trunk_link" zoom-appear="6" />
+        <osm-tag key="highway" value="unclassified" zoom-appear="13" />
+    </ways>
+
+    <!-- NATURAL / WATERWAY TAGS -->
+    <ways>
+        <osm-tag key="leaf_type" renderable="false" value="broadleaved" />
+        <osm-tag key="leaf_type" renderable="false" value="needleleaved" />
+        <osm-tag key="leaf_type" renderable="false" value="leafless" />
+
+        <osm-tag key="lock" value="yes" zoom-appear="14" />
+
+        <!-- mapsforge artificial tags for land/sea areas, do not remove -->
+        <osm-tag key="natural" value="sea" zoom-appear="0" />
+        <osm-tag key="natural" value="nosea" zoom-appear="0" />
+
+        <osm-tag key="natural" value="beach" zoom-appear="10" />
+        <osm-tag key="natural" value="coastline" zoom-appear="0" />
+        <osm-tag key="natural" value="fell" zoom-appear="10" />
+        <osm-tag enabled="false" key="natural" value="glacier" zoom-appear="8" />
+        <osm-tag key="natural" value="grassland" zoom-appear="10" />
+        <osm-tag key="natural" value="heath" zoom-appear="10" />
+        <osm-tag key="natural" value="land" zoom-appear="8" />
+        <osm-tag key="natural" value="marsh" zoom-appear="12" />
+        <osm-tag key="natural" value="scrub" zoom-appear="10" />
+        <osm-tag key="natural" value="scree" zoom-appear="10" />
+        <osm-tag key="natural" value="water" zoom-appear="8" />
+        <osm-tag key="natural" value="wetland" zoom-appear="12" />
+        <osm-tag key="natural" value="wood" zoom-appear="8" />
+
+        <osm-tag key="waterway" value="canal" zoom-appear="10" />
+        <osm-tag key="waterway" value="dam" zoom-appear="10" />
+        <osm-tag key="waterway" value="drain" zoom-appear="13" />
+        <osm-tag key="waterway" value="river" zoom-appear="8" />
+        <osm-tag key="waterway" value="riverbank" zoom-appear="8" />
+        <osm-tag key="waterway" value="stream" zoom-appear="13" />
+    </ways>
+
+    <!-- OTHER TAGS -->
+    <ways>
+        <osm-tag key="area" value="yes" zoom-appear="12" />
+    </ways>
+
+    <!-- NOT TO RENDER -->
+    <ways>
+        <osm-tag key="id" renderable="false" value="%f" />
+
+        <osm-tag key="access" renderable="false" value="destination" />
+        <osm-tag key="access" renderable="false" value="private" />
+
+        <osm-tag key="bridge" renderable="false" value="yes" />
+
+        <osm-tag equivalent-values="1,true" key="oneway" renderable="false" value="yes" />
+        <osm-tag key="oneway" renderable="false" value="-1" />
+        <osm-tag equivalent-values="0,false" key="oneway" renderable="false" value="no" />
+
+        <osm-tag key="piste:difficulty" renderable="false" value="novice" />
+        <osm-tag key="piste:difficulty" renderable="false" value="easy" />
+        <osm-tag key="piste:difficulty" renderable="false" value="intermediate" />
+        <osm-tag key="piste:difficulty" renderable="false" value="advanced" />
+        <osm-tag key="piste:difficulty" renderable="false" value="expert" />
+        <osm-tag key="piste:difficulty" renderable="false" value="freeride" />
+
+        <osm-tag key="tracktype" renderable="false" value="grade1" />
+        <osm-tag key="tracktype" renderable="false" value="grade2" />
+        <osm-tag key="tracktype" renderable="false" value="grade3" />
+        <osm-tag key="tracktype" renderable="false" value="grade4" />
+        <osm-tag key="tracktype" renderable="false" value="grade5" />
+
+        <osm-tag key="tunnel" renderable="false" value="yes" />
+        <osm-tag key="tunnel" renderable="false" value="no" />
+
+        <osm-tag key="wood" renderable="false" value="coniferous" />
+        <osm-tag key="wood" renderable="false" value="deciduous" />
+        <osm-tag key="wood" renderable="false" value="mixed" />
+    </ways>
+</tag-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rendertheme xmlns="http://mapsforge.org/renderTheme" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme ../renderTheme.xsd" version="1" map-background="#F8F8F8">
+	<!-- elevation countours -->
+	<!-- <rule e="way" k="contour" v="elevation">
+		<rule e="way" k="ele" v="100">
+			<line stroke="#A07F5F" stroke-width="1" />
+		</rule>
+	</rule> -->
+	<!-- <rule e="way" k="ele" v="100">
+		<line stroke="#A07F5F" stroke-width="1" />
+	</rule> -->
+ 	<rule e="way" k="contour" v="*">
+		<line stroke="#A07F5F" stroke-width="1" />
+	</rule>
+	
+<!-- 	Nem működik...
+	<rule e="way" k="contour" v="100">
+		<line stroke="#A07F5F" stroke-width="1" />
+	</rule>
+	 -->
+	<!--<rule e="way" k="ele" v="*">
+		<line stroke="#A07F5F" stroke-width="2" />
+	</rule>-->
+	
+	<rule e="way" k="highway" v="*">
+		<line stroke="#000000" stroke-width="1" />
+	</rule>
+	<rule e="way" k="highway" v="track">
+		<line stroke="#000000" stroke-width="1" />
+	</rule>
+</rendertheme>
