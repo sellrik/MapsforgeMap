@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<translations>
+<!--   <translation>
+    <name>Unify different tags to mark website URLs</name>
+    <description>This transformations searches for the tags url=*, website=* and contact:website=* and unifies them into the tag url=*. Since &lt;tag from_match="cw" ...&gt; comes last in &lt;output&gt;, the input tag contact:website=* has precedence over other input tags when being written to the output tag url=*.</description>
+    <match mode="or">
+      <tag k="url"             match_id="u"  v=".*"/>
+      <tag k="website"         match_id="w"  v=".*"/>
+      <tag k="contact:website" match_id="cw" v=".*"/>
+    </match>
+    <output>
+      <copy-unmatched/>
+      <tag from_match="u"  k="url" v="{0}"/>
+      <tag from_match="w"  k="url" v="{0}"/>
+      <tag from_match="cw" k="url" v="{0}"/>
+    </output>
+  </translation> -->
+  <translation>
+    <name></name>
+    <description></description>
+    <match mode="or" type="relation">
+      <tag k="jel" match_id="jel"  v=".*"/>
+    </match>
+    <output>
+      <copy-unmatched/>
+      <tag from_match="jel" k="test" v="{0}"/>
+    </output>
+  </translation> 
+</translations>

@@ -1,0 +1,7 @@
+Teszt rész: 18.944548,47.523212,19.017003,47.564812
+osmosis --read-pbf data\hungary-latest.osm.pbf --bounding-box top=47.564812 left=18.944548 bottom=47.523212 right=19.017003 --write-xml data\test.osm
+
+osmosis --read-xml data\test.osm --mw file=data\test.map tag-conf-file=tag-mapping.xml bbox=47.453804,18.89465,47.629478,19.10751
+
+osmosis --read-xml data\test.osm --tag-transform file=tag-transform.xml --wx data\test_trans.osm
+

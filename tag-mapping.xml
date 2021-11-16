@@ -5,13 +5,154 @@
 
 	<!-- Elevation countour lines -->
 	 <ways>
-        <!-- <osm-tag key="ele" value="100" zoom-appear="14" /> -->
-		
-		<!-- Ez működött, de nem volt részelets? -->
 		<osm-tag key="contour" value="elevation" zoom-appear="14" />
-		 -->
+		<osm-tag key="contour_ext" value="elevation_minor" zoom-appear="14" />
+		<osm-tag key="contour_ext" value="elevation_medium" zoom-appear="14" />
+		<osm-tag key="contour_ext" value="elevation_major" zoom-appear="14" />
+		<osm-tag key="ele" value="10" zoom-appear="14" />
+		<osm-tag key="ele" value="20" zoom-appear="14" />
+		<osm-tag key="ele" value="30" zoom-appear="14" />
+		<osm-tag key="ele" value="40" zoom-appear="14" />
+		<osm-tag key="ele" value="50" zoom-appear="14" />
+		<osm-tag key="ele" value="60" zoom-appear="14" />
+		<osm-tag key="ele" value="70" zoom-appear="14" />
+		<osm-tag key="ele" value="80" zoom-appear="14" />
+		<osm-tag key="ele" value="90" zoom-appear="14" />
+		<osm-tag key="ele" value="100" zoom-appear="14" />
+		<osm-tag key="ele" value="110" zoom-appear="14" />
+		<osm-tag key="ele" value="120" zoom-appear="14" />
+		<osm-tag key="ele" value="130" zoom-appear="14" />
+		<osm-tag key="ele" value="140" zoom-appear="14" />
+		<osm-tag key="ele" value="150" zoom-appear="14" />
+		<osm-tag key="ele" value="160" zoom-appear="14" />
+		<osm-tag key="ele" value="170" zoom-appear="14" />
+		<osm-tag key="ele" value="180" zoom-appear="14" />
+		<osm-tag key="ele" value="190" zoom-appear="14" />
+		<osm-tag key="ele" value="200" zoom-appear="14" />
+		<osm-tag key="ele" value="210" zoom-appear="14" />
+		<osm-tag key="ele" value="220" zoom-appear="14" />
+		<osm-tag key="ele" value="230" zoom-appear="14" />
+		<osm-tag key="ele" value="240" zoom-appear="14" />
+		<osm-tag key="ele" value="250" zoom-appear="14" />
+		<osm-tag key="ele" value="260" zoom-appear="14" />
+		<osm-tag key="ele" value="270" zoom-appear="14" />
+		<osm-tag key="ele" value="280" zoom-appear="14" />
+		<osm-tag key="ele" value="290" zoom-appear="14" />
+		<osm-tag key="ele" value="300" zoom-appear="14" />
+		<osm-tag key="ele" value="310" zoom-appear="14" />
+		<osm-tag key="ele" value="320" zoom-appear="14" />
+		<osm-tag key="ele" value="330" zoom-appear="14" />
+		<osm-tag key="ele" value="340" zoom-appear="14" />
+		<osm-tag key="ele" value="350" zoom-appear="14" />
+		<osm-tag key="ele" value="360" zoom-appear="14" />
+		<osm-tag key="ele" value="370" zoom-appear="14" />
+		<osm-tag key="ele" value="380" zoom-appear="14" />
+		<osm-tag key="ele" value="390" zoom-appear="14" />
+		<osm-tag key="ele" value="400" zoom-appear="14" />
+		<osm-tag key="ele" value="410" zoom-appear="14" />
+		<osm-tag key="ele" value="420" zoom-appear="14" />
+		<osm-tag key="ele" value="430" zoom-appear="14" />
+		<osm-tag key="ele" value="440" zoom-appear="14" />
+		<osm-tag key="ele" value="450" zoom-appear="14" />
+		<osm-tag key="ele" value="460" zoom-appear="14" />
+		<osm-tag key="ele" value="470" zoom-appear="14" />
+		<osm-tag key="ele" value="480" zoom-appear="14" />
+		<osm-tag key="ele" value="490" zoom-appear="14" />
+		<osm-tag key="ele" value="500" zoom-appear="14" />
+		<osm-tag key="ele" value="510" zoom-appear="14" />
+		<osm-tag key="ele" value="520" zoom-appear="14" />
+		<osm-tag key="ele" value="530" zoom-appear="14" />
+		<osm-tag key="ele" value="540" zoom-appear="14" />
+		<osm-tag key="ele" value="550" zoom-appear="14" />
+		<osm-tag key="ele" value="560" zoom-appear="14" />
+		<osm-tag key="ele" value="570" zoom-appear="14" />
+		<osm-tag key="ele" value="580" zoom-appear="14" />
+		<osm-tag key="ele" value="590" zoom-appear="14" />
+		<osm-tag key="ele" value="600" zoom-appear="14" />
+		<osm-tag key="ele" value="610" zoom-appear="14" />
+		<osm-tag key="ele" value="620" zoom-appear="14" />
+		<osm-tag key="ele" value="630" zoom-appear="14" />
+		<osm-tag key="ele" value="640" zoom-appear="14" />
+		<osm-tag key="ele" value="650" zoom-appear="14" />
+		<osm-tag key="ele" value="660" zoom-appear="14" />
+		<osm-tag key="ele" value="670" zoom-appear="14" />
+		<osm-tag key="ele" value="680" zoom-appear="14" />
+		<osm-tag key="ele" value="690" zoom-appear="14" />
+		<osm-tag key="ele" value="700" zoom-appear="14" />
+		<osm-tag key="ele" value="710" zoom-appear="14" />
+		<osm-tag key="ele" value="720" zoom-appear="14" />
+		<osm-tag key="ele" value="730" zoom-appear="14" />
+		<osm-tag key="ele" value="740" zoom-appear="14" />
+		<osm-tag key="ele" value="750" zoom-appear="14" />
+		<osm-tag key="ele" value="760" zoom-appear="14" />
+		<osm-tag key="ele" value="770" zoom-appear="14" />
+		<osm-tag key="ele" value="780" zoom-appear="14" />
+		<osm-tag key="ele" value="790" zoom-appear="14" />
+		<osm-tag key="ele" value="800" zoom-appear="14" />
+		<osm-tag key="ele" value="810" zoom-appear="14" />
+		<osm-tag key="ele" value="820" zoom-appear="14" />
+		<osm-tag key="ele" value="830" zoom-appear="14" />
+		<osm-tag key="ele" value="840" zoom-appear="14" />
+		<osm-tag key="ele" value="850" zoom-appear="14" />
+		<osm-tag key="ele" value="860" zoom-appear="14" />
+		<osm-tag key="ele" value="870" zoom-appear="14" />
+		<osm-tag key="ele" value="880" zoom-appear="14" />
+		<osm-tag key="ele" value="890" zoom-appear="14" />
+		<osm-tag key="ele" value="900" zoom-appear="14" />
+		<osm-tag key="ele" value="910" zoom-appear="14" />
+		<osm-tag key="ele" value="920" zoom-appear="14" />
+		<osm-tag key="ele" value="930" zoom-appear="14" />
+		<osm-tag key="ele" value="940" zoom-appear="14" />
+		<osm-tag key="ele" value="950" zoom-appear="14" />
+		<osm-tag key="ele" value="960" zoom-appear="14" />
+		<osm-tag key="ele" value="970" zoom-appear="14" />
+		<osm-tag key="ele" value="980" zoom-appear="14" />
+		<osm-tag key="ele" value="990" zoom-appear="14" />
+		<osm-tag key="ele" value="1000" zoom-appear="14" />
+		<osm-tag key="ele" value="1010" zoom-appear="14" />
+		<osm-tag key="ele" value="1020" zoom-appear="14" />
+		<osm-tag key="ele" value="1030" zoom-appear="14" />
+		<osm-tag key="ele" value="1040" zoom-appear="14" />
+		<osm-tag key="ele" value="1050" zoom-appear="14" />
+		<osm-tag key="ele" value="1060" zoom-appear="14" />
+		<osm-tag key="ele" value="1070" zoom-appear="14" />
+		<osm-tag key="ele" value="1080" zoom-appear="14" />
+		<osm-tag key="ele" value="1090" zoom-appear="14" />
+		<osm-tag key="ele" value="1100" zoom-appear="14" />
     </ways>
-
+	
+	<!-- Hiking trails -->
+	<ways>
+		<osm-tag key="jel" value="k" zoom-appear="13" />
+		<osm-tag key="jel" value="k+" zoom-appear="13" />
+		<osm-tag key="jel" value="k3" zoom-appear="13" />
+		<osm-tag key="jel" value="k4" zoom-appear="13" />
+		<osm-tag key="jel" value="kq" zoom-appear="13" />
+		<osm-tag key="jel" value="kb" zoom-appear="13" />
+		<osm-tag key="jel" value="kl" zoom-appear="13" />
+		<osm-tag key="jel" value="kpec" zoom-appear="13" />
+		<osm-tag key="jel" value="p" zoom-appear="13" />
+		<osm-tag key="jel" value="p+" zoom-appear="13" />
+		<osm-tag key="jel" value="p3" zoom-appear="13" />
+		<osm-tag key="jel" value="p4" zoom-appear="13" />
+		<osm-tag key="jel" value="pq" zoom-appear="13" />
+		<osm-tag key="jel" value="pb" zoom-appear="13" />
+		<osm-tag key="jel" value="pl" zoom-appear="13" />
+		<osm-tag key="jel" value="s" zoom-appear="13" />
+		<osm-tag key="jel" value="s+" zoom-appear="13" />
+		<osm-tag key="jel" value="s3" zoom-appear="13" />
+		<osm-tag key="jel" value="s4" zoom-appear="13" />
+		<osm-tag key="jel" value="sq" zoom-appear="13" />
+		<osm-tag key="jel" value="sb" zoom-appear="13" />
+		<osm-tag key="jel" value="sl" zoom-appear="13" />
+		<osm-tag key="jel" value="z" zoom-appear="13" />
+		<osm-tag key="jel" value="z+" zoom-appear="13" />
+		<osm-tag key="jel" value="z3" zoom-appear="13" />
+		<osm-tag key="jel" value="z4" zoom-appear="13" />
+		<osm-tag key="jel" value="zq" zoom-appear="13" />
+		<osm-tag key="jel" value="zb" zoom-appear="13" />
+		<osm-tag key="jel" value="zl" zoom-appear="13" />
+    </ways>
 
     <!-- ************* WAYS *************** -->
 
@@ -21,7 +162,7 @@
         <osm-tag key="highway" value="bus_guideway" zoom-appear="13" />
         <osm-tag key="highway" value="byway" zoom-appear="13" />
         <osm-tag key="highway" value="construction" zoom-appear="13" />
-        <!-- <osm-tag key="highway" value="cycleway" zoom-appear="13" /> -->
+        <osm-tag key="highway" value="cycleway" zoom-appear="13" />
         <osm-tag key="highway" value="footway" zoom-appear="13" />
         <osm-tag key="highway" value="living_street" zoom-appear="13" />
         <osm-tag key="highway" value="motorway" zoom-appear="6" />
@@ -78,6 +219,93 @@
         <osm-tag key="waterway" value="river" zoom-appear="8" />
         <osm-tag key="waterway" value="riverbank" zoom-appear="8" />
         <osm-tag key="waterway" value="stream" zoom-appear="13" />
+		<osm-tag key="waterway" value="ditch" zoom-appear="13" />
+    </ways>
+	
+
+	<!-- LANDUSE TAGS -->
+    <ways>
+        <osm-tag key="landuse" value="allotments" zoom-appear="10" />
+        <osm-tag key="landuse" value="basin" zoom-appear="12" />
+        <osm-tag key="landuse" value="brownfield" zoom-appear="10" />
+        <osm-tag key="landuse" value="cemetery" zoom-appear="10" />
+        <osm-tag key="landuse" value="commercial" zoom-appear="10" />
+        <osm-tag key="landuse" value="construction" zoom-appear="12" />
+        <osm-tag key="landuse" value="farm" zoom-appear="12" />
+        <osm-tag key="landuse" value="farmland" zoom-appear="12" />
+        <osm-tag key="landuse" value="factory" zoom-appear="12" />
+        <osm-tag key="landuse" value="farmyard" zoom-appear="12" />
+        <osm-tag key="landuse" value="forest" zoom-appear="8" />
+        <osm-tag key="landuse" value="grass" zoom-appear="12" />
+        <osm-tag key="landuse" value="greenfield" zoom-appear="12" />
+        <osm-tag key="landuse" value="industrial" zoom-appear="10" />
+        <osm-tag key="landuse" value="landfill" zoom-appear="12" />
+        <osm-tag key="landuse" value="meadow" zoom-appear="12" />
+        <osm-tag key="landuse" value="military" zoom-appear="10" />
+        <osm-tag key="landuse" value="orchard" zoom-appear="12" />
+        <osm-tag key="landuse" value="quarry" zoom-appear="10" />
+        <osm-tag key="landuse" value="railway" zoom-appear="10" />
+        <osm-tag key="landuse" value="recreation_ground" zoom-appear="10" />
+        <osm-tag key="landuse" value="reservoir" zoom-appear="10" />
+        <osm-tag key="landuse" value="residential" zoom-appear="10" />
+        <osm-tag key="landuse" value="retail" zoom-appear="10" />
+        <osm-tag key="landuse" value="village_green" zoom-appear="10" />
+        <osm-tag key="landuse" value="vineyard" zoom-appear="12" />
+        <osm-tag key="landuse" value="wood" zoom-appear="8" />
+    </ways>
+	
+	<!-- LEISURE/SPORT TAGS -->
+    <ways>
+        <osm-tag key="leisure" value="common" zoom-appear="12" />
+        <osm-tag key="leisure" value="dog_park" zoom-appear="12" />
+        <osm-tag key="leisure" value="garden" zoom-appear="12" />
+        <osm-tag key="leisure" value="golf_course" zoom-appear="12" />
+        <osm-tag key="leisure" value="nature_reserve" zoom-appear="12" />
+        <osm-tag key="leisure" value="park" zoom-appear="10" />
+        <osm-tag key="leisure" value="pitch" zoom-appear="12" />
+        <osm-tag key="leisure" value="playground" zoom-appear="12" />
+        <osm-tag key="leisure" value="sports_centre" zoom-appear="12" />
+        <osm-tag key="leisure" value="stadium" zoom-appear="10" />
+        <osm-tag key="leisure" value="swimming_pool" zoom-appear="14" />
+        <osm-tag key="leisure" value="track" zoom-appear="12" />
+        <osm-tag key="leisure" value="water_park" zoom-appear="12" />
+
+        <osm-tag key="sport" value="golf" zoom-appear="12" />
+        <osm-tag key="sport" value="soccer" zoom-appear="12" />
+        <osm-tag key="sport" value="swimming" zoom-appear="12" />
+        <osm-tag key="sport" value="tennis" zoom-appear="12" />
+        <osm-tag key="sport" value="baseball" zoom-appear="12" />
+        <osm-tag key="sport" value="basketball" zoom-appear="12" />
+        <osm-tag key="sport" value="volleyball" zoom-appear="12" />
+        <osm-tag key="sport" value="skiing" zoom-appear="12" />
+        <osm-tag key="sport" value="shooting" zoom-appear="12" />
+        <osm-tag key="sport" value="cricket" zoom-appear="12" />
+        <osm-tag key="sport" value="boules" zoom-appear="12" />
+        <osm-tag key="sport" value="football" zoom-appear="12" />
+        <osm-tag key="sport" value="skating" zoom-appear="12" />
+        <osm-tag key="sport" value="climbing" zoom-appear="12" />
+        <osm-tag key="sport" value="equestrian" zoom-appear="12" />
+        <osm-tag key="sport" value="bowls" zoom-appear="12" />
+        <osm-tag key="sport" value="multi" zoom-appear="12" />
+
+    </ways>
+	
+	 <!-- PUBLIC TRANSPORT -->
+    <ways>
+        <osm-tag key="railway" value="disused" zoom-appear="15" />
+        <osm-tag key="railway" value="funicular" zoom-appear="12" />
+        <osm-tag key="railway" value="light_rail" zoom-appear="12" />
+        <osm-tag key="railway" value="miniature" zoom-appear="14" />
+        <osm-tag key="railway" value="monorail" zoom-appear="14" />
+        <osm-tag key="railway" value="narrow_gauge" zoom-appear="14" />
+        <osm-tag key="railway" value="platform" zoom-appear="14" />
+        <osm-tag key="railway" value="preserved" zoom-appear="14" />
+        <osm-tag key="railway" value="rail" zoom-appear="10" />
+        <!-- <osm-tag key="railway" value="station" zoom-appear="14" /> -->
+        <!-- <osm-tag key="railway" value="subway" zoom-appear="15" /> -->
+        <osm-tag key="railway" value="tram" zoom-appear="15" />
+
+        <osm-tag key="route" value="ferry" zoom-appear="12" />
     </ways>
 
     <!-- OTHER TAGS -->

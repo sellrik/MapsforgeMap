@@ -1,2 +1,6 @@
 lib
 data
+/.vs
+/Transform/.vs/Transform
+/Transform/Transform/bin/Debug/netcoreapp3.1
+/Transform/Transform/obj

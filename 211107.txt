@@ -1,4 +1,10 @@
 Budai-hegység: 18.89465,47.453804,19.10751,47.629478
 osmosis --read-pbf data\hungary-latest.osm.pbf --bounding-box top=47.629478 left=18.89465 bottom=47.453804 right=19.10751 --write-xml data\budaihegyseg.osm
-phyghtmap -a 18.89465:47.453804:19.10751:47.629478 -o out_file --write-timestamp --max-nodes-per-tile=0 --source=srtm1 --srtm-version=3.0
-osmosis --read-xml data\budaihegyseg.osm --mw file=data\budaihegyseg.map tag-conf-file=tag-mapping.xml bbox=47.453804,18.89465,47.629478,19.10751
+
+phyghtmap -a 18.89465:47.453804:19.10751:47.629478 -o out_file --write-timestamp --max-nodes-per-tile=0 --max-nodes-per-way=200 --source=srtm1 --srtm-version=3.0
+
+osmosis --rx data/budaihegyseg.osm --rx data/out_file_lon18.89_19.11lat47.45_47.63_srtm1v3.0.osm --merge --wx data\budaihegyseg_srtm.osm
+
+osmosis --read-xml data\budaihegyseg_srtm.osm --mw file=data\budaihegyseg.map tag-conf-file=tag-mapping.xml bbox=47.453804,18.89465,47.629478,19.10751
+
+osmosis --read-xml data\budaihegyseg_srtm_hiking.osm --mw file=data\budaihegyseg.map tag-conf-file=tag-mapping.xml bbox=47.453804,18.89465,47.629478,19.10751
