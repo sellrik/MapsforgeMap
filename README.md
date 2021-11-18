@@ -31,3 +31,6 @@ Telepítés folyamat:
 \Internal shared storage\Locus\mapsVector
 2. Sablon (themes\test.xml és themes\symbol mappa) felmásolása az alábbi mappába: </br>
 \Internal shared storage\Locus\mapsVector\_themes\test
+
+Az elkészült térkép innen tölthető le: </br>
+https://drive.google.com/file/d/1PAKGnKarINz3ns-M31Gj_i-5ymglnFc6/view?usp=sharing
