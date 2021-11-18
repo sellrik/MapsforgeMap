@@ -152,6 +152,10 @@
 		<osm-tag key="jel" value="zq" zoom-appear="13" />
 		<osm-tag key="jel" value="zb" zoom-appear="13" />
 		<osm-tag key="jel" value="zl" zoom-appear="13" />
+		<osm-tag key="jel" value="kc" zoom-appear="13" />
+		<osm-tag key="jel" value="pc" zoom-appear="13" />
+		<osm-tag key="jel" value="sc" zoom-appear="13" />
+		<osm-tag key="jel" value="zc" zoom-appear="13" />
     </ways>
 
     <!-- ************* WAYS *************** -->
