@@ -1,3 +1,7 @@
+Környezet előkészítése, telepítés: TODO
+1. Osmosis: https://github.com/mapsforge/mapsforge/blob/master/docs/Getting-Started-Map-Writer.md
+2. phyghtmap: http://katze.tfiu.de/projects/phyghtmap/#Download
+
 Térkép létrehozás folyamat:
 1. Osm adatok letöltése innen (osm.pmf): </br>
 https://download.geofabrik.de/europe/hungary.html
