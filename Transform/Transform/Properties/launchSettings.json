@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Transform": {
+      "commandName": "Project",
+      "commandLineArgs": "--source ..\\..\\..\\..\\..\\data\\budaihegyseg.osm --target ..\\..\\..\\..\\..\\data\\budaihegyseg_srtm_hiking.osm"
+    }
+  }
+}

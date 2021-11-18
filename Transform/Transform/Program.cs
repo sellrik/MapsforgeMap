@@ -7,18 +7,41 @@ namespace Transform
     {
         static void Main(string[] args)
         {
-            var timer = new Stopwatch();
-            timer.Start();
+            try
+            {
+                var sourceFilenme = GetArgumentValueByName(args, "--source");
+                var targetFilenme = GetArgumentValueByName(args, "--target");
 
-            var service = new Service();
-            //service.TestReader();
-            //service.TestReader2();
-            //service.TestReader3();
-            //service.TestReader4();
-            service.TestReader5();
+                if (string.IsNullOrEmpty(sourceFilenme) || string.IsNullOrEmpty(targetFilenme))
+                {
+                    throw new ArgumentException("Invalid arguments");
+                }
 
-            timer.Stop();
-            Console.WriteLine($"Ellapsed: {timer.Elapsed.ToString("hh\\:mm\\:ss")}");
+                var service = new Service();
+
+                service.CopyTagsFromRelationToWay(sourceFilenme, targetFilenme);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                Console.ReadKey();
+            }
+        }
+
+        static string GetArgumentValueByName(string[] args, string argumentName)
+        {
+            for (int i = 0; i < args.Length; i++)
+            {
+                if (args[i]== argumentName)
+                {
+                    if (args.Length >= i + 1)
+                    {
+                        return args[i + 1];
+                    }
+                }
+            }
+
+            throw new ArgumentException($"Argument was not found: {argumentName}");
         }
     }
 }
