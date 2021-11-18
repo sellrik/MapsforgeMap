@@ -2,7 +2,7 @@ Térkép létrehozás folyamat:
 1. Osm adatok letöltése innen (osm.pmf): </br>
 https://download.geofabrik.de/europe/hungary.html
 2. A tesztelés miatt a Budai-hegység terültére szűrés: </br>
-Budai-hegység: 18.89465,47.453804,19.10751,47.629478 </br>
+(Budai-hegység területe: 18.89465,47.453804,19.10751,47.629478) </br>
 osmosis --read-pbf data\hungary-latest.osm.pbf --bounding-box top=47.629478 left=18.89465 bottom=47.453804 right=19.10751 --write-xml data\budaihegyseg.osm
 3. Szintvonalak létrehozása: </br>
 phyghtmap -a 18.89465:47.453804:19.10751:47.629478 -o out_file --write-timestamp --max-nodes-per-tile=0 --max-nodes-per-way=200 --source=srtm1 --srtm-version=3.0
