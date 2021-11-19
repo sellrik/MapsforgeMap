@@ -39,6 +39,6 @@ osmosis --read-xml data\hungary_hiking_srtm.osm --mw file=data\hungary.map tag-c
 
 Telepítés folyamat:
 1. A térképfájl felmásolása a telefonon az alábbi mappába </br>
-\Internal shared storage\Locus\mapsVector
+\Locus\mapsVector
 2. Sablon (themes\test.xml és themes\symbol mappa) felmásolása az alábbi mappába: </br>
-\Internal shared storage\Locus\mapsVector\_themes\test
+\Locus\mapsVector\_themes\test
