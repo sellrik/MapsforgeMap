@@ -26,11 +26,19 @@ A budaihegyseg_srtm.osm fájlből keletkezik a budaihegyseg_srtm_hiking.osm fáj
 osmosis --read-xml data\budaihegyseg_srtm_hiking.osm --mw file=data\budaihegyseg.map tag-conf-file=tag-mapping.xml bbox=47.453804,18.89465,47.629478,19.10751 </br>
 A tag-mapping.xml fájl tartalmazza a térkép által támogatott elemeket.
 
+Egész Magyarországra:
+osmosis --read-pbf data\hungary-latest.osm.pbf --write-xml data\hungary.osm </br>
+
+phyghtmap -a 16.11262:45.73218:22.90201:48.58766 -o out_file --write-timestamp --max-nodes-per-tile=0 --max-nodes-per-way=200 --start-node-id=10000000000 --start-way-id=10000000000 --source=srtm1 --srtm-version=3.0 </br>
+
+lib\transform\Transform.exe --source data\hungary.osm --target data\hungary_hiking.osm </br>
+
+osmosis --rx data/hungary_hiking.osm --rx data/out_file_lon16.11_22.90lat45.73_48.59_srtm1v3.0.osm --merge --wx data\hungary_hiking_srtm.osm </br>
+
+osmosis --read-xml data\hungary_hiking_srtm.osm --mw file=data\hungary.map tag-conf-file=tag-mapping.xml </br>
+
 Telepítés folyamat:
 1. A térképfájl felmásolása a telefonon az alábbi mappába </br>
 \Internal shared storage\Locus\mapsVector
 2. Sablon (themes\test.xml és themes\symbol mappa) felmásolása az alábbi mappába: </br>
 \Internal shared storage\Locus\mapsVector\_themes\test
-
-Az elkészült térkép innen tölthető le: </br>
-https://drive.google.com/file/d/1PAKGnKarINz3ns-M31Gj_i-5ymglnFc6/view?usp=sharing

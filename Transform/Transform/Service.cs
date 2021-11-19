@@ -12,8 +12,7 @@ namespace Transform
     {
         public void CopyTagsFromRelationToWay(string sourceFilename, string targetFilename)
         {
-            var relationTagList = new List<KeyValuePair<string, string>>();
-            var relationWayList = new List<KeyValuePair<string, string>>();
+            var wayList = new HashSet<KeyValuePair<string, string>>(); // Way id, tag
 
             using (var reader = XmlReader.Create(sourceFilename))
             {
@@ -35,10 +34,6 @@ namespace Transform
 
                                 if (jelElement != null)
                                 {
-                                    var relationId = element.Attribute("id").Value;
-
-                                    relationTagList.Add(new KeyValuePair<string, string>(relationId, jelElement.ToString()));
-
                                     var memberWays = element
                                         .Elements()
                                         .Where(i => i.Name == "member")
@@ -46,8 +41,8 @@ namespace Transform
 
                                     foreach (var item in memberWays)
                                     {
-                                        var refAttribute = item.Attribute("ref").Value;
-                                        relationWayList.Add(new KeyValuePair<string, string>(relationId, refAttribute));
+                                        var wayId = item.Attribute("ref").Value;
+                                        wayList.Add(new KeyValuePair<string, string>(wayId, jelElement.ToString()));
                                     }
                                 }
                             }
@@ -55,6 +50,11 @@ namespace Transform
                     }
                 }
             }
+
+            var wayIdList = wayList
+                .Select(i => i.Key)
+                .Distinct()
+                .ToHashSet();
 
             using (var sw = new StreamWriter(targetFilename, false))
             using (var sr = new StreamReader(sourceFilename))
@@ -71,7 +71,7 @@ namespace Transform
                         var attributes = GetAttributes(line);
                         wayId = attributes.FirstOrDefault(i => i.Key == "id").Value;
 
-                        if (relationWayList.Any(i => i.Value == wayId))
+                        if (wayIdList.Contains(wayId))
                         {
                             isWayPartOfRelation = true;
                         }
@@ -84,14 +84,10 @@ namespace Transform
                     {
                         if (isWayPartOfRelation)
                         {
-                            var relations = relationWayList.Where(i => i.Value == wayId);
-                            foreach (var relation in relations)
+                            var tags = wayList.Where(i => i.Key == wayId);
+                            foreach (var tag in tags)
                             {
-                                var tags = relationTagList.Where(i => i.Key == relation.Key);
-                                foreach (var tag in tags)
-                                {
-                                    sw.WriteLine($"\t\t{tag.Value}");
-                                }
+                                sw.WriteLine($"\t{tag.Value}");
                             }
                         }
 

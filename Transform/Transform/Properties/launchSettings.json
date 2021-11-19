@@ -2,7 +2,7 @@
   "profiles": {
     "Transform": {
       "commandName": "Project",
-      "commandLineArgs": "--source ..\\..\\..\\..\\..\\data\\budaihegyseg.osm --target ..\\..\\..\\..\\..\\data\\budaihegyseg_srtm_hiking.osm"
+      "commandLineArgs": "--source ..\\..\\..\\..\\..\\data\\hungary.osm --target ..\\..\\..\\..\\..\\data\\hungary_hiking_test.osm"
     }
   }
 }
