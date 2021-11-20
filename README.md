@@ -44,5 +44,5 @@ Telepítés folyamat:
 \Locus\mapsVector\_themes\test\t
 
 Alternatív Sablon telepítés: </br>
-A telefonon a linkre kattintva a locus automatikusan telepíti a témát: </br>
-[Téma telepítése](locus-actions://http/raw.githubusercontent.com/sellrik/MapsforgeMap/master/theme_locus_action.xml)
+A lenti linket nyissuk meg a telefon böngészőjében:
+locus-actions://http/raw.githubusercontent.com/sellrik/MapsforgeMap/master/theme_locus_action.xml
