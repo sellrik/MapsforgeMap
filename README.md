@@ -41,8 +41,4 @@ Telepítés folyamat:
 1. A térképfájl felmásolása a telefonon az alábbi mappába </br>
 \Locus\mapsVector
 2. Sablon (themes\test.xml és themes\symbol mappa) felmásolása az alábbi mappába: </br>
-\Locus\mapsVector\_themes\test\t
-
-Alternatív Sablon telepítés: </br>
-A lenti linket nyissuk meg a telefon böngészőjében:
-locus-actions://http/raw.githubusercontent.com/sellrik/MapsforgeMap/master/theme_locus_action.xml
+\Locus\mapsVector\_themes\test\
