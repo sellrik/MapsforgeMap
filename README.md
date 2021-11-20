@@ -45,4 +45,4 @@ Telepítés folyamat:
 
 Alternatív Sablon telepítés: </br>
 A telefonon a linkre kattintva a locus automatikusan telepíti a témát: </br>
-[Téma telepítése](https://raw.githubusercontent.com/sellrik/MapsforgeMap/master/theme_locus_action.xml)
+[Téma telepítése](locus-actions://http/raw.githubusercontent.com/sellrik/MapsforgeMap/master/theme_locus_action.xml)
