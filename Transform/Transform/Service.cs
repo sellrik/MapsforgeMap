@@ -565,7 +565,7 @@ namespace Transform
             var nodeList = new List<Node>();
             var nodeIdCounter = 0;
 
-            //var distanceBetweenNodes = 200;
+            var distanceBetweenTags = 100;
 
             foreach (var way in waysWithDistance)
             {
@@ -575,35 +575,76 @@ namespace Transform
                     .OrderBy(i => i.Index)
                     .ToArray();
 
-                var cummulativeDistance = 0d;
                 var halfOfDistance = way.Distance / 2;
+                var tagOffset = 0;
 
-                for (int i = 1; i < nodes.Length; i++)
+                for (int i = 0; i < way.Tags.Count(); i++)
                 {
-                    var previousNode = nodes[i - 1];
-                    var node = nodes[i];
+                    var cumulativeDistance = 0d;
 
-                    var newCummulativeDistance = cummulativeDistance + node.DistanceFromPreviousNode;
-                    if (newCummulativeDistance >= halfOfDistance)
+                    var nextTagDistance = distanceBetweenTags + tagOffset;
+                    var tag = way.Tags[i];
+
+                    for (int j = 1; j < nodes.Length; j++)
                     {
-                        var diff = newCummulativeDistance - halfOfDistance;
-                        var fraction = diff / node.DistanceFromPreviousNode;
-                        Utils.CalculateIntermediatePoint(previousNode.Lat, previousNode.Lon, node.Lat, node.Lon, fraction, out var lat, out var lon);
+                        var previousNode = nodes[j - 1];
+                        var node = nodes[j];
 
-                        nodeList.Add(new Node
+                        // Middle point of the way:
+                        //var newcumulativeDistance = cumulativeDistance + node.DistanceFromPreviousNode;
+                        //if (newcumulativeDistance >= halfOfDistance)
+                        //{
+                        //    var diff = newcumulativeDistance - halfOfDistance;
+                        //    var fraction = diff / node.DistanceFromPreviousNode;
+                        //    Utils.CalculateIntermediatePoint(previousNode.Lat, previousNode.Lon, node.Lat, node.Lon, fraction, out var lat, out var lon);
+
+                        //    nodeList.Add(new Node
+                        //    {
+                        //        Id = (--nodeIdCounter).ToString(),
+                        //        Lat = lat,
+                        //        Lon = lon,
+                        //        Tags = way.Tags
+                        //    });
+
+                        //    break;
+                        //}
+                        //else
+                        //{
+                        //    cumulativeDistance += node.DistanceFromPreviousNode;
+                        //}
+
+                        var newCumulativeDistance = cumulativeDistance + node.DistanceFromPreviousNode;
+
+                        if (newCumulativeDistance >= way.Distance)
                         {
-                            Id = (--nodeIdCounter).ToString(),
-                            Lat = lat,
-                            Lon = lon,
-                            Tags = way.Tags
-                        });
+                            break;
+                        }
 
-                        break;
+                        if (newCumulativeDistance >= nextTagDistance)
+                        {
+                            var diff = newCumulativeDistance - nextTagDistance;
+                            var fraction = diff / node.DistanceFromPreviousNode;
+                            fraction = 1 - fraction;
+                            Utils.CalculateIntermediatePoint(previousNode.Lat, previousNode.Lon, node.Lat, node.Lon, fraction, out var lat, out var lon);
+
+                            nodeList.Add(new Node
+                            {
+                                Id = (--nodeIdCounter).ToString(),
+                                Lat = lat,
+                                Lon = lon,
+                                Tags = new List<string>
+                                {
+                                    tag
+                                }
+                            });
+
+                            nextTagDistance += distanceBetweenTags;
+                        }
+
+                        cumulativeDistance += node.DistanceFromPreviousNode;
                     }
-                    else
-                    {
-                        cummulativeDistance += node.DistanceFromPreviousNode;
-                    }
+
+                    tagOffset += 10;
                 }
             }
 
