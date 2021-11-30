@@ -3,8 +3,8 @@ Környezet előkészítése, telepítés: TODO
 2. phyghtmap: http://katze.tfiu.de/projects/phyghtmap/#Download
 
 Térkép létrehozás folyamat:  
-1. Osm adatok letöltése innen (osm.pmf): </br>
-https://download.geofabrik.de/europe/hungary.html </br>
+1. Osm adatok letöltése innen (osm.pmf):  
+https://download.geofabrik.de/europe/hungary.html  
 
 2. Kovertálás (pbf -> osm):  
 Opcionálisan az osm fájl is letölthető az előző lépésben   
@@ -19,7 +19,7 @@ osmosis --read-pbf data\hungary-latest.osm.pbf --write-xml data\map.osm
 3. Turistajelzések létrehozása:  
 A mapsforge nem támogatja a relation-öket. Ezért írtam egy programot (Transform almappa), ami a "jel" tag-eket átmásolja a way-ekre a relation-ökröl. A map.osm fájlből keletkezik a map_hiking.osm fájl, ami tartalmazza az átmásolt tag-eket.
 ```
-lib\transform\Transform.exe --source data\map.osm --target data\map_hiking.osm </br>
+lib\transform\Transform.exe --source data\map.osm --target data\map_hiking.osm  
 ```
 4. Szintvonalak létrehozása:  
 Ide felöltöttem az országra legenerált szintvonalakat:  
@@ -34,11 +34,11 @@ Az egész országra:
 phyghtmap -a 16.11262:45.73218:22.90201:48.58766 -o out_file --write-timestamp --max-nodes-per-tile=0 --max-nodes-per-way=200 --start-node-id=10000000000 --start-way-id=10000000000 --source=srtm1 --srtm-version=3.0
 ```
 
-5. A két adathalmaz egyesítése (térkép + turistajelzések +  szintvonal): </br>
+5. A két adathalmaz egyesítése (térkép + turistajelzések +  szintvonal):  
 A második paraméternél a phyghtmap által generált fájl nevét kell megadni.
 
 ```
-osmosis --rx data/map_hiking.osm --rx data/out_file_lon16.11_22.90lat45.73_48.59_srtm1v3.0.osm --merge --wx data\map_hiking_srtm.osm </br>
+osmosis --rx data/map_hiking.osm --rx data/out_file_lon16.11_22.90lat45.73_48.59_srtm1v3.0.osm --merge --wx data\map_hiking_srtm.osm  
 ```
 
 6. Térkép elkészítése:  

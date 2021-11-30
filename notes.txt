@@ -1,0 +1,34 @@
+ (Budai-hegység területe: 18.89465,47.453804,19.10751,47.629478) </br>
+osmosis --read-xml data\hungary_hiking_srtm.osm --bounding-box top=47.629478 left=18.89465 bottom=47.453804 right=19.10751 --write-xml data\hungary_hiking_srtm_budaihegyseg.osm
+
+
+Több szintvonal jelent meg - javítás:
+https://forum.locusmap.eu/index.php?topic=6454.75
+
+@john_percy
+Thank you for detailed steps but I can't still simulate it. However it seems that in the 3th step (when you zoom back to the level 14),  the same map or maybe another one is also rendered. If you want to play with it - please disable automap loading (Settings > Maps > Offline maps), check that map overlay is also disabled and try it again. Thanks, Petr
+
+@voldapet: turning off automatic map loading for vector maps does indeed stop this effect.
+
+Edit: furthermore, it is connected with the fact that I have maps with overlapping coverage in this area. LoMaps Scotland, OAMaps UK_Scotland, and OAMaps Great Britain. If I disable any two of the maps, the effect doesn't happen. (It may be worth noting that UK_Scotland has contour intervals of half the other two maps.)
+
+Edit2: I can confirm that the extra contour lines are due to *both* the standard and the higher resolution sets displaying at the same time.
+« Last Edit: February 18, 2019, 09:40:06 by john_percy »
+
+Több linesymbol:
+https://www.openandromaps.org/en/oam-forums/topic/mapsforge-0-5-0
+
+Another prob I have now with mapsforge, but only since the new version:
+linesymbols are restricted to 1 now.
+If multiple ones are painted, only 1 wins, the others vanish.
+But multiple symbols are needed to be able to display several keys.
+
+Those multiple symbols work great in Locus, but I’d prefer to have them work in all mapsforge apps, in case others may want to use my fancy style some day too (still in the works).
+(That said, my Locus version is still a rather old one, so I *hope* it still works ;-))
+
+
+osmosis --read-pbf data\hungary-latest.osm.pbf --bounding-box top=47.629478 left=18.89465 bottom=47.453804 right=19.10751 --write-xml data\map.osm
+
+18.94211,47.505676,19.016139,47.569228
+
+osmosis --read-pbf data\hungary-latest.osm.pbf --bounding-box top=47.569228 left=18.94211 bottom=47.505676 right=19.016139 --write-xml data\map.osm

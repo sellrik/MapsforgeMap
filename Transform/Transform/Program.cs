@@ -10,16 +10,25 @@ namespace Transform
             try
             {
                 var sourceFilenme = GetArgumentValueByName(args, "--source");
-                var targetFilenme = GetArgumentValueByName(args, "--target");
+                var targetFilename = GetArgumentValueByName(args, "--target");
 
-                if (string.IsNullOrEmpty(sourceFilenme) || string.IsNullOrEmpty(targetFilenme))
+                if (string.IsNullOrEmpty(sourceFilenme) || string.IsNullOrEmpty(targetFilename))
                 {
                     throw new ArgumentException("Invalid arguments");
                 }
 
                 var service = new Service();
 
-                service.CopyTagsFromRelationToWay(sourceFilenme, targetFilenme);
+                var copyTagsToNode = GetArgumentByName(args, "--copyTagsToNode");
+
+                if (copyTagsToNode)
+                {
+                    service.CopyTagsFromRelationToNode(sourceFilenme, targetFilename);
+                }
+                else
+                {
+                    service.CopyTagsFromRelationToWay(sourceFilenme, targetFilename);
+                }
             }
             catch (Exception ex)
             {
@@ -42,6 +51,19 @@ namespace Transform
             }
 
             throw new ArgumentException($"Argument was not found: {argumentName}");
+        }
+
+        static bool GetArgumentByName(string[] args, string argumentName)
+        {
+            for (int i = 0; i < args.Length; i++)
+            {
+                if (args[i] == argumentName)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

@@ -59,7 +59,6 @@
 	<rule e="way" k="contour" v="elevation">
 		<rule e="way" k="contour_ext" v="elevation_minor">
 			<line stroke="#A07F5F" stroke-width="0.4" stroke-linecap="butt" />
-			<!--<pathText k="ele" font-size="20" fill="#A07F5F" stroke="#ffffff" stroke-width="4.00" />-->
 		</rule>
 		<rule e="way" k="contour_ext" v="elevation_medium">
 			<line stroke="#A07F5F" stroke-width="0.6" stroke-linecap="butt" />

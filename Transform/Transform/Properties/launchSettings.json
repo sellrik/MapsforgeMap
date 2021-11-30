@@ -2,7 +2,7 @@
   "profiles": {
     "Transform": {
       "commandName": "Project",
-      "commandLineArgs": "--source ..\\..\\..\\..\\..\\data\\hungary.osm --target ..\\..\\..\\..\\..\\data\\hungary_hiking_test.osm"
+      "commandLineArgs": "--source ..\\..\\..\\..\\..\\data\\map.osm --target ..\\..\\..\\..\\..\\data\\map_hiking_test.osm --copyTagsToNode"
     }
   }
 }
