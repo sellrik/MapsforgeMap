@@ -7,6 +7,7 @@ namespace Transform
     {
         static void Main(string[] args)
         {
+
             try
             {
                 var sourceFilenme = GetArgumentValueByName(args, "--source");
@@ -18,6 +19,10 @@ namespace Transform
                 }
 
                 var service = new Service();
+
+                service.Test(sourceFilenme, targetFilename);
+
+                return;
 
                 var copyTagsToNode = GetArgumentByName(args, "--copyTagsToNode");
 

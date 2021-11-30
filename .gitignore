@@ -3,3 +3,5 @@ data
 /Transform/.vs/Transform
 /Transform/Transform/bin/Debug/netcoreapp3.1
 /Transform/Transform/obj
+/Transform/Test/bin/Debug/netcoreapp3.1
+/Transform/Test/obj

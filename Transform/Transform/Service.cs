@@ -5,6 +5,8 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Linq;
 using System.IO;
+using Transform.Model;
+using System.Globalization;
 
 namespace Transform
 {
@@ -282,7 +284,7 @@ namespace Transform
                                 var lon = nodeAttributes.FirstOrDefault(i => i.Key == "lon").Value;
 
                                 var nodeText = $"  <node id=\"{nodeIdCounter}\" version=\"1\" timestamp =\"{timestamp}\" uid=\"0\" user=\"\" lat =\"{lat}\" lon=\"{lon}\">";
-                               
+
                                 sw.WriteLine(nodeText);
 
                                 foreach (var node in nodes)
@@ -302,6 +304,373 @@ namespace Transform
                         }
                     }
                 }
+
+                sw.WriteLine("</osm>");
+            }
+        }
+
+        public void Test(string sourceFilename, string targetFilename)
+        {
+            var supportedJelTags = new[]
+            {
+                "k",
+                "k+",
+                "k3",
+                "k4",
+                "kq",
+                "kb",
+                "kl",
+                "kpec",
+                "p",
+                "p+",
+                "p3",
+                "p4",
+                "pq",
+                "pb",
+                "pl",
+                "s",
+                "s+",
+                "s3",
+                "s4",
+                "sq",
+                "sb",
+                "sl",
+                "z",
+                "z+",
+                "z3",
+                "z4",
+                "zq",
+                "zb",
+                "zl",
+                "kc",
+                "pc",
+                "sc",
+                "zc"
+            };
+
+            var wayList = new List<Way>();
+
+            using (var reader = XmlReader.Create(sourceFilename))
+            {
+                reader.MoveToContent();
+                while (reader.Read())
+                {
+                    if (reader.NodeType == XmlNodeType.Element)
+                    {
+                        if (reader.Name == "relation")
+                        {
+                            var element = XNode.ReadFrom(reader) as XElement;
+                            if (element != null)
+                            {
+                                var jelElement = element
+                                    .Elements()
+                                    .Where(i => i.Name == "tag")
+                                    .Where(i => i.Attribute("k").Value == "jel")
+                                    .FirstOrDefault();
+
+                                if (jelElement != null)
+                                {
+                                    var jelValue = jelElement.Attribute("v").Value;
+
+                                    if (!supportedJelTags.Contains(jelValue))
+                                    {
+                                        continue;
+                                    }
+
+                                    var memberWays = element
+                                        .Elements()
+                                        .Where(i => i.Name == "member")
+                                        .Where(i => i.Attribute("type").Value == "way");
+
+                                    foreach (var item in memberWays)
+                                    {
+                                        var wayId = item.Attribute("ref").Value;
+
+                                        var way = wayList.FirstOrDefault(i => i.Id == wayId);
+
+                                        if (way == null)
+                                        {
+                                            way = new Way
+                                            {
+                                                Id = wayId
+                                            };
+
+                                            wayList.Add(way);
+                                        }
+
+                                        if (!way.Tags.Contains(jelValue))
+                                        {
+                                            way.Tags.Add(jelValue);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            var wayIdList = wayList
+                .Select(i => i.Id)
+                .ToHashSet();
+
+            using (var reader = XmlReader.Create(sourceFilename))
+            {
+                reader.MoveToContent();
+                while (reader.Read())
+                {
+                    if (reader.NodeType == XmlNodeType.Element)
+                    {
+                        if (reader.Name == "way")
+                        {
+                            var element = XNode.ReadFrom(reader) as XElement;
+                            if (element != null)
+                            {
+                                var wayId = element.Attribute("id")?.Value;
+                                if (wayIdList.Contains(wayId))
+                                {
+                                    var way = wayList.FirstOrDefault(i => i.Id == wayId);
+
+                                    if (way == null)
+                                    {
+                                        continue; // ?
+                                    }
+
+                                    var nodes = element
+                                        .Elements()
+                                        .Where(i => i.Name == "nd")
+                                        .ToArray();
+
+                                    var wayNodeCount = nodes.Count();
+
+                                    for (int i = 0; i < wayNodeCount; i++)
+                                    {
+                                        var node = nodes.ElementAt(i);
+
+                                        var nodeId = node.Attribute("ref").Value;
+
+                                        way.Nodes.Add(new WayNode
+                                        {
+                                            Id = nodeId,
+                                            Index = i
+                                        });
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            var wayNodeIdList = wayList
+                .SelectMany(i => i.Nodes)
+                .Select(i => i.Id)
+                .ToHashSet();
+
+            using (var reader = XmlReader.Create(sourceFilename))
+            {
+                reader.MoveToContent();
+                while (reader.Read())
+                {
+                    if (reader.NodeType == XmlNodeType.Element)
+                    {
+                        if (reader.Name == "node")
+                        {
+                            var element = XNode.ReadFrom(reader) as XElement;
+                            if (element != null)
+                            {
+                                var nodeId = element.Attribute("id").Value;
+
+                                if (!wayNodeIdList.Contains(nodeId))
+                                {
+                                    continue;
+                                }
+
+                                var latText = element.Attribute("lat").Value;
+                                var lonText = element.Attribute("lon").Value;
+
+                                var lat = double.Parse(latText, CultureInfo.InvariantCulture);
+                                var lon = double.Parse(lonText, CultureInfo.InvariantCulture);
+
+                                var nodes = wayList
+                                    .SelectMany(i => i.Nodes)
+                                    .Where(i => i.Id == nodeId);
+
+                                foreach (var node in nodes)
+                                {
+                                    node.Lat = lat;
+                                    node.Lon = lon;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            foreach (var way in wayList)
+            {
+                var nodes = way.Nodes
+                    .Where(i => i.Lat > 0)
+                    .Where(i => i.Lon > 0)
+                    .OrderBy(i => i.Index)
+                    .ToArray();
+
+                var distanceOfWay = 0d;
+
+                for (int i = 1; i < nodes.Length; i++)
+                {
+                    var previousNode = nodes[i - 1];
+                    var node = nodes[i];
+
+                    var distanceBetweenNodes = Utils.CalculateDistance(previousNode.Lat, previousNode.Lon, node.Lat, node.Lon);
+                    node.DistanceFromPreviousNode = distanceBetweenNodes;
+                    distanceOfWay += distanceBetweenNodes;
+                }
+
+                way.Distance = distanceOfWay;
+            }
+
+            // TODO: ez hogy lehet? A térkép területén kívülre esnek?
+
+            //var x = wayList
+            //    .SelectMany(i => i.Nodes)
+            //    .Where(i => i.Lat == 0)
+            //    .ToList();
+
+            //var y = wayList
+            //    .Where(i => i.Nodes.Any(j =>  j.Lat == 0))
+            //    .ToList();
+
+            //var z = wayList
+            //    .Where(i => i.Nodes.Where(j => j.Lat > 0 && j.Lon > 0).Count() > 1)
+            //    .Where(i => i.Distance == 0);
+
+            var waysWithDistance = wayList
+                .Where(i => i.Distance > 0);
+
+            var waysWithoutDistance1 = wayList
+                .Where(i => i.Nodes.Any())
+                .Where(i => i.Distance <= 0)
+                .ToList();
+
+            var waysWithoutDistance2 = wayList
+                .Where(i => i.Nodes.Count > 1)
+                .Where(i => i.Distance <= 0)
+                .ToList();
+
+            var waysWithMultipleTags = wayList
+               .Where(i => i.Tags.Count() > 1)
+               .ToList();
+
+            var nodeList = new List<Node>();
+            var nodeIdCounter = 0;
+
+            //var distanceBetweenNodes = 200;
+
+            foreach (var way in waysWithDistance)
+            {
+                var nodes = way.Nodes
+                    .Where(i => i.Lat > 0)
+                    .Where(i => i.Lon > 0)
+                    .OrderBy(i => i.Index)
+                    .ToArray();
+
+                var cummulativeDistance = 0d;
+                var halfOfDistance = way.Distance / 2;
+
+                for (int i = 1; i < nodes.Length; i++)
+                {
+                    var previousNode = nodes[i - 1];
+                    var node = nodes[i];
+
+                    var newCummulativeDistance = cummulativeDistance + node.DistanceFromPreviousNode;
+                    if (newCummulativeDistance >= halfOfDistance)
+                    {
+                        var diff = newCummulativeDistance - halfOfDistance;
+                        var fraction = diff / node.DistanceFromPreviousNode;
+                        Utils.CalculateIntermediatePoint(previousNode.Lat, previousNode.Lon, node.Lat, node.Lon, fraction, out var lat, out var lon);
+
+                        nodeList.Add(new Node
+                        {
+                            Id = (--nodeIdCounter).ToString(),
+                            Lat = lat,
+                            Lon = lon,
+                            Tags = way.Tags
+                        });
+
+                        break;
+                    }
+                    else
+                    {
+                        cummulativeDistance += node.DistanceFromPreviousNode;
+                    }
+                }
+            }
+
+            using (var sw = new StreamWriter(targetFilename, false))
+            {
+                sw.WriteLine("<?xml version='1.0' encoding='UTF-8'?>");
+                sw.WriteLine("<osm version=\"0.6\" generator=\"\">");
+                // TODO: bounds?
+
+                var timestamp = DateTime.Now.ToString("yyyy-MM-ddTHH:MM:ssZ");
+
+                foreach (var node in nodeList)
+                {
+                    var nodeText = $"  <node id=\"{node.Id}\" version=\"1\" timestamp =\"{timestamp}\" uid=\"0\" user=\"\" lat =\"{node.Lat.ToString(CultureInfo.InvariantCulture)}\" lon=\"{node.Lon.ToString(CultureInfo.InvariantCulture)}\">";
+
+                    sw.WriteLine(nodeText);
+
+                    foreach (var tag in node.Tags)
+                    {
+                        sw.WriteLine($"     <tag k=\"jel\" v=\"{tag}\" />");
+                    }
+
+                    sw.WriteLine("  </node>");
+                }
+
+                //while (!sr.EndOfStream)
+                //{
+                //    var line = sr.ReadLine();
+
+                //    if (line.Trim().StartsWith("<node"))
+                //    {
+                //        var attributes = GetAttributes(line);
+                //        var nodeId = attributes.FirstOrDefault(i => i.Key == "id").Value;
+
+                //        if (nodeIdList.Contains(nodeId))
+                //        {
+                //            var nodes = nodeList.Where(i => i.NodeId == nodeId);
+
+                //            if (nodes.Any())
+                //            {
+                //                nodeIdCounter--;
+
+                //                var nodeAttributes = GetAttributes(line);
+                //                var lat = nodeAttributes.FirstOrDefault(i => i.Key == "lat").Value;
+                //                var lon = nodeAttributes.FirstOrDefault(i => i.Key == "lon").Value;
+
+                //                var nodeText = $"  <node id=\"{nodeIdCounter}\" version=\"1\" timestamp =\"{timestamp}\" uid=\"0\" user=\"\" lat =\"{lat}\" lon=\"{lon}\">";
+
+                //                sw.WriteLine(nodeText);
+
+                //                foreach (var node in nodes)
+                //                {
+                //                    sw.WriteLine($"     <tag k=\"jel\" v=\"{node.Tag}\" />");
+                //                }
+
+                //                sw.WriteLine("  </node>");
+                //            }
+                //        }
+                //    }
+                //    else
+                //    {
+                //        if (line.Contains("<bounds"))
+                //        {
+                //            sw.WriteLine(line);
+                //        }
+                //    }
+                //}
 
                 sw.WriteLine("</osm>");
             }
