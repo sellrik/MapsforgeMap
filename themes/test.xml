@@ -71,147 +71,218 @@
 	</rule>	
 	
 	<rule e="way" k="waterway" v="river|canal">
-		<line stroke="#aad3df" stroke-width="2" stroke-linecap="butt" />
+		<line stroke="#aad3df" stroke-width="2" />
 	</rule>
 	<rule e="way" k="waterway" v="stream|ditch|drain">
-		<line stroke="#aad3df" stroke-width="1" stroke-linecap="butt" />
+		<line stroke="#aad3df" stroke-width="1" />
 	</rule>
 	
 	<rule e="way" k="jel" v="zc">
-		<line stroke="#008000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_zc.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#008000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="sc">
-		<line stroke="#ffcc00" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_sc.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ffcc00" stroke-width="5" />
 	</rule>
 		<rule e="way" k="jel" v="pc">
-		<line stroke="#ff0000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_pc.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ff0000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="kc">
-		<line stroke="#0000ff" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_kc.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#0000ff" stroke-width="5" />
 	</rule>
 	
 	<rule e="way" k="jel" v="zl">
-		<line stroke="#008000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_zl.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#008000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="sl">
-		<line stroke="#ffcc00" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_sl.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ffcc00" stroke-width="5" />
 	</rule>
 		<rule e="way" k="jel" v="pl">
-		<line stroke="#ff0000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_pl.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ff0000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="kl">
-		<line stroke="#0000ff" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_kl.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#0000ff" stroke-width="5" />
 	</rule>
 	
 	<rule e="way" k="jel" v="zb">
-		<line stroke="#008000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_zb.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#008000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="sb">
-		<line stroke="#ffcc00" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_sb.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ffcc00" stroke-width="5" />
 	</rule>
 		<rule e="way" k="jel" v="pb">
-		<line stroke="#ff0000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_pb.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ff0000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="kb">
-		<line stroke="#0000ff" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_kb.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#0000ff" stroke-width="5" />
 	</rule>
 	
 	<rule e="way" k="jel" v="zq">
-		<line stroke="#008000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_zq.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#008000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="sq">
-		<line stroke="#ffcc00" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_sq.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ffcc00" stroke-width="5" />
 	</rule>
 		<rule e="way" k="jel" v="pq">
-		<line stroke="#ff0000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_pq.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ff0000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="kq">
-		<line stroke="#0000ff" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_kq.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#0000ff" stroke-width="5" />
 	</rule>
 	
 	<rule e="way" k="jel" v="z4">
-		<line stroke="#008000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_z4.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#008000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="s4">
-		<line stroke="#ffcc00" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_s4.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ffcc00" stroke-width="5" />
 	</rule>
 		<rule e="way" k="jel" v="p4">
-		<line stroke="#ff0000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_p4.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ff0000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="k4">
-		<line stroke="#0000ff" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_k4.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#0000ff" stroke-width="5" />
 	</rule>
 	
 	<rule e="way" k="jel" v="z3">
-		<line stroke="#008000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_z3.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#008000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="s3">
-		<line stroke="#ffcc00" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_s3.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ffcc00" stroke-width="5" />
 	</rule>
 		<rule e="way" k="jel" v="p3">
-		<line stroke="#ff0000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_p3.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ff0000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="k3">
-		<line stroke="#0000ff" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_k3.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#0000ff" stroke-width="5" />
 	</rule>
 	
 	<rule e="way" k="jel" v="z+">
-		<line stroke="#008000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_z+.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#008000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="s+">
-		<line stroke="#ffcc00" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_s+.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ffcc00" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="p+">
-		<line stroke="#ff0000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_p+.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ff0000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="k+">
-		<line stroke="#0000ff" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_k+.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#0000ff" stroke-width="5" />
 	</rule>
 	
 	<rule e="way" k="jel" v="z">
-		<line stroke="#008000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_z.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#008000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="s">
-		<line stroke="#ffcc00" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_s.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ffcc00" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="p">
-		<line stroke="#ff0000" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_p.png" align-center="true" rotate="false" repeat="true" />
+		<line stroke="#ff0000" stroke-width="5" />
 	</rule>
 	<rule e="way" k="jel" v="k">
-		<line stroke="#0000ff" stroke-width="5" stroke-linecap="butt" />
-		<lineSymbol src="file:/symbol/jel_k.png" align-center="true" rotate="false" repeat="true" />
-		<!--<lineSymbol src="file:/symbol/blue_bar.svg" align-center="true" rotate="false" repeat="true" />-->
+		<line stroke="#0000ff" stroke-width="5" />
+	</rule>
+	
+	<rule e="node" k="jel" v="zc">
+		<symbol src="file:/symbol/jel_zc.png" />
+	</rule>
+	<rule e="node" k="jel" v="sc">
+		<symbol src="file:/symbol/jel_sc.png" />
+	</rule>
+	<rule e="node" k="jel" v="pc">
+		<symbol src="file:/symbol/jel_pc.png" />
+	</rule>
+	<rule e="node" k="jel" v="kc">
+		<symbol src="file:/symbol/jel_kc.png" />
+	</rule>
+	
+	<rule e="node" k="jel" v="zl">
+		<symbol src="file:/symbol/jel_zl.png" />
+	</rule>
+	<rule e="node" k="jel" v="sl">
+		<symbol src="file:/symbol/jel_sl.png" />
+	</rule>
+	<rule e="node" k="jel" v="pl">
+		<symbol src="file:/symbol/jel_pl.png" />
+	</rule>
+	<rule e="node" k="jel" v="kl">
+		<symbol src="file:/symbol/jel_kl.png" />
+	</rule>
+	
+	<rule e="node" k="jel" v="zb">
+		<symbol src="file:/symbol/jel_zb.png" />
+	</rule>
+	<rule e="node" k="jel" v="sb">
+		<symbol src="file:/symbol/jel_sb.png" />
+	</rule>
+	<rule e="node" k="jel" v="pb">
+		<symbol src="file:/symbol/jel_pb.png" />
+	</rule>
+	<rule e="node" k="jel" v="kb">
+		<symbol src="file:/symbol/jel_kb.png" />
+	</rule>
+	
+	<rule e="node" k="jel" v="zq">
+		<symbol src="file:/symbol/jel_zq.png" />
+	</rule>
+	<rule e="node" k="jel" v="sq">
+		<symbol src="file:/symbol/jel_sq.png" />
+	</rule>
+	<rule e="node" k="jel" v="pq">
+		<symbol src="file:/symbol/jel_pq.png" />
+	</rule>
+	<rule e="node" k="jel" v="kq">
+		<symbol src="file:/symbol/jel_kq.png" />
+	</rule>
+	
+	<rule e="node" k="jel" v="z4">
+		<symbol src="file:/symbol/jel_z4.png" />
+	</rule>
+	<rule e="node" k="jel" v="s4">
+		<symbol src="file:/symbol/jel_s4.png" />
+	</rule>
+	<rule e="node" k="jel" v="p4">
+		<symbol src="file:/symbol/jel_p4.png" />
+	</rule>
+	<rule e="node" k="jel" v="k4">
+		<symbol src="file:/symbol/jel_k4.png" />
+	</rule>
+	
+	<rule e="node" k="jel" v="z3">
+		<symbol src="file:/symbol/jel_z3.png" />
+	</rule>
+	<rule e="node" k="jel" v="s3">
+		<symbol src="file:/symbol/jel_s3.png" />
+	</rule>
+	<rule e="node" k="jel" v="p3">
+		<symbol src="file:/symbol/jel_p3.png" />
+	</rule>
+	<rule e="node" k="jel" v="k3">
+		<symbol src="file:/symbol/jel_k3.png" />
+	</rule>
+	
+	<rule e="node" k="jel" v="z+">
+		<symbol src="file:/symbol/jel_z+.png" />
+	</rule>
+	<rule e="node" k="jel" v="s+">
+		<symbol src="file:/symbol/jel_s+.png" />
+	</rule>
+	<rule e="node" k="jel" v="p+">
+		<symbol src="file:/symbol/jel_p+.png" />
+	</rule>
+	<rule e="node" k="jel" v="k+">
+		<symbol src="file:/symbol/jel_k+.png" />
+	</rule>
+	
+	<rule e="node" k="jel" v="z" zoom-min="12" >
+		<symbol src="file:/symbol/jel_z.png" />
+	</rule>
+	<rule e="node" k="jel" v="s" zoom-min="12" >
+		<symbol src="file:/symbol/jel_s.png" />
+	</rule>
+	<rule e="node" k="jel" v="p" zoom-min="12" >
+		<symbol src="file:/symbol/jel_p.png" />
+	</rule>
+	<rule e="node" k="jel" v="k" zoom-min="12" >
+		<symbol src="file:/symbol/jel_k.png" />
 	</rule>
 	
 	

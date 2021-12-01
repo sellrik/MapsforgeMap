@@ -18,21 +18,19 @@ namespace Transform
                     throw new ArgumentException("Invalid arguments");
                 }
 
+
                 var service = new Service();
 
-                service.Test(sourceFilenme, targetFilename);
+                var createTagNodes = GetArgumentByName(args, "--createTagNodes");
 
-                return;
-
-                var copyTagsToNode = GetArgumentByName(args, "--copyTagsToNode");
-
-                if (copyTagsToNode)
+                if (!createTagNodes)
                 {
-                    service.CopyTagsFromRelationToNode(sourceFilenme, targetFilename);
+                    service.CopyTagsFromRelationToWay(sourceFilenme, targetFilename);
                 }
                 else
                 {
-                    service.CopyTagsFromRelationToWay(sourceFilenme, targetFilename);
+                    service.CreateTagNodes(sourceFilenme, targetFilename);
+                    //service.CopyTagsFromRelationToWay(sourceFilenme, targetFilename);
                 }
             }
             catch (Exception ex)

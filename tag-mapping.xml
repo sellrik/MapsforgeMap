@@ -157,6 +157,43 @@
 		<osm-tag key="jel" value="sc" zoom-appear="13" />
 		<osm-tag key="jel" value="zc" zoom-appear="13" />
     </ways>
+	
+	<!-- Hiking trail symbols -->
+	<pois>
+		<osm-tag key="jel" value="k" zoom-appear="13" />
+		<osm-tag key="jel" value="k+" zoom-appear="13" />
+		<osm-tag key="jel" value="k3" zoom-appear="13" />
+		<osm-tag key="jel" value="k4" zoom-appear="13" />
+		<osm-tag key="jel" value="kq" zoom-appear="13" />
+		<osm-tag key="jel" value="kb" zoom-appear="13" />
+		<osm-tag key="jel" value="kl" zoom-appear="13" />
+		<osm-tag key="jel" value="kpec" zoom-appear="13" />
+		<osm-tag key="jel" value="p" zoom-appear="13" />
+		<osm-tag key="jel" value="p+" zoom-appear="13" />
+		<osm-tag key="jel" value="p3" zoom-appear="13" />
+		<osm-tag key="jel" value="p4" zoom-appear="13" />
+		<osm-tag key="jel" value="pq" zoom-appear="13" />
+		<osm-tag key="jel" value="pb" zoom-appear="13" />
+		<osm-tag key="jel" value="pl" zoom-appear="13" />
+		<osm-tag key="jel" value="s" zoom-appear="13" />
+		<osm-tag key="jel" value="s+" zoom-appear="13" />
+		<osm-tag key="jel" value="s3" zoom-appear="13" />
+		<osm-tag key="jel" value="s4" zoom-appear="13" />
+		<osm-tag key="jel" value="sq" zoom-appear="13" />
+		<osm-tag key="jel" value="sb" zoom-appear="13" />
+		<osm-tag key="jel" value="sl" zoom-appear="13" />
+		<osm-tag key="jel" value="z" zoom-appear="13" />
+		<osm-tag key="jel" value="z+" zoom-appear="13" />
+		<osm-tag key="jel" value="z3" zoom-appear="13" />
+		<osm-tag key="jel" value="z4" zoom-appear="13" />
+		<osm-tag key="jel" value="zq" zoom-appear="13" />
+		<osm-tag key="jel" value="zb" zoom-appear="13" />
+		<osm-tag key="jel" value="zl" zoom-appear="13" />
+		<osm-tag key="jel" value="kc" zoom-appear="13" />
+		<osm-tag key="jel" value="pc" zoom-appear="13" />
+		<osm-tag key="jel" value="sc" zoom-appear="13" />
+		<osm-tag key="jel" value="zc" zoom-appear="13" />
+    </pois>
 
     <!-- ************* WAYS *************** -->
 

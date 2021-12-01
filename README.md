@@ -17,10 +17,15 @@ Az egész országra/szűrés nélkül:
 osmosis --read-pbf data\hungary-latest.osm.pbf --write-xml data\map.osm 
 ```
 3. Turistajelzések létrehozása:  
-A mapsforge nem támogatja a relation-öket. Ezért írtam egy programot (Transform almappa), ami a "jel" tag-eket átmásolja a way-ekre a relation-ökröl. A map.osm fájlből keletkezik a map_hiking.osm fájl, ami tartalmazza az átmásolt tag-eket.
+
 ```
-lib\transform\Transform.exe --source data\map.osm --target data\map_hiking.osm  
+lib\transform\Transform.exe --source data\map.osm --target data\map_hiking_way.osm  
 ```
+
+```
+lib\transform\Transform.exe --source data\map.osm --target data\map_hiking_symbol.osm --createTagNodes
+``
+
 4. Szintvonalak létrehozása:  
 Ide felöltöttem az országra legenerált szintvonalakat:  
 https://drive.google.com/file/d/1y1mLppFAjiIo0lO500_bc0fINvLavuWX  
@@ -38,7 +43,7 @@ phyghtmap -a 16.11262:45.73218:22.90201:48.58766 -o out_file --write-timestamp -
 A második paraméternél a phyghtmap által generált fájl nevét kell megadni.
 
 ```
-osmosis --rx data/map_hiking.osm --rx data/out_file_lon16.11_22.90lat45.73_48.59_srtm1v3.0.osm --merge --wx data\map_hiking_srtm.osm  
+osmosis --rx data/map_hiking_way.osm --rx data/map_hiking_symbol.osm --rx data/out_file_lon16.11_22.90lat45.73_48.59_srtm1v3.0.osm --merge --merge --wx data\map_hiking_srtm.osm  
 ```
 
 6. Térkép elkészítése:  
