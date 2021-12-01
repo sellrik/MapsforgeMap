@@ -29,7 +29,8 @@ namespace Transform
                 }
                 else
                 {
-                    service.CreateTagNodes(sourceFilenme, targetFilename);
+                    var trailmarkService = new TrailmarkService();
+                    trailmarkService.CreateTrailmarks(sourceFilenme, targetFilename);
                     //service.CopyTagsFromRelationToWay(sourceFilenme, targetFilename);
                 }
             }
