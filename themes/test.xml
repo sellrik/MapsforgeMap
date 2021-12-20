@@ -10,7 +10,7 @@
 	<rule e="way" k="landuse" v="farmland">
 		<area fill="#eef0d5" />
 	</rule>
-		<rule e="way" k="landuse" v="grass|meadow|village_green">
+	<rule e="way" k="landuse" v="grass|meadow|village_green">
 		<area fill="#cdebb0" />
 	</rule>
 	<rule e="way" k="landuse" v="residential">
@@ -72,9 +72,16 @@
 
 	<rule e="way" k="waterway" v="river|canal">
 		<line stroke="#aad3df" stroke-width="2" />
+		<pathText k="name" font-size="22" fill="#5787b7" stroke="#ffffff" stroke-width="4.00" />
 	</rule>
 	<rule e="way" k="waterway" v="stream|ditch|drain">
 		<line stroke="#aad3df" stroke-width="1" />
+		<pathText k="name" font-size="18" fill="#5787b7" stroke="#ffffff" stroke-width="4.00" />
+	</rule>
+	
+	<rule e="way" k="natural" v="water" zoom-min="13">
+		<pathText k="name" font-size="22" fill="#5787b7" stroke="#ffffff" stroke-width="4.00" />
+		<caption k="name" font-style="bold" font-size="18" fill="#5787b7" stroke="#ffffff" stroke-width="4.00" />
 	</rule>
 
 	<rule e="way" k="jel" v="zc">
@@ -711,7 +718,7 @@
 	</rule>
 
 	<rule e="way" k="highway" v="path">
-		<line stroke="#000000" stroke-width="1" stroke-dasharray="10.0,10.0" stroke-linecap="butt" />
+		<line stroke="#000000" stroke-width="0.5" stroke-dasharray="10.0,10.0" stroke-linecap="butt" />
 		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00" />
 	</rule>
 	<rule e="way" k="highway" v="corridor">
@@ -727,7 +734,7 @@
 		<line stroke="#000000" stroke-width="1" stroke-dasharray="10.0,10.0" stroke-linecap="butt" />
 	</rule>
 	<rule e="way" k="highway" v="footway">
-		<line stroke="#000000" stroke-width="1" stroke-dasharray="10.0,10.0" stroke-linecap="butt" />
+		<line stroke="#000000" stroke-width="0.4" stroke-dasharray="10.0,10.0" stroke-linecap="butt" />
 		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00" />
 	</rule>
 	
@@ -745,11 +752,36 @@
 		<line stroke="#444444" stroke-width="0.8" stroke-linecap="butt" />
 	</rule>
 	
-	<rule e="node" k="natural" v="peak" zoom-min="12">
+	<rule e="node" k="natural" v="peak" zoom-min="13">
 		<symbol src="file:/symbol/natural_peak.png" scale="1" />
 		<caption k="ele" dy="35" font-style="bold" font-size="18" fill="#A07F5F" stroke="#ffffff" stroke-width="4.00" />
 		<caption k="name" dy="-20" font-style="bold" font-size="18" fill="#A07F5F" stroke="#ffffff" stroke-width="4.00" />
 		<!-- <caption k="ele" dy="34" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="4.00" /> -->
 		<!-- <caption k="name" dy="-18" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="4.00" /> -->
+	</rule>
+	
+	<rule e="node" k="place" v="hamlet" zoom-min="8" zoom-max="15">
+		<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="3.00" />
+	</rule>
+	<rule e="node" k="place" v="borough" zoom-min="11" zoom-max="15">
+		<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="3.00" />
+	</rule>
+	<rule e="node" k="place" v="neighbourhood" zoom-min="11" zoom-max="15">
+		<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="3.00" />
+	</rule>
+	<rule e="node" k="place" v="suburb" zoom-min="11" zoom-max="15">
+		<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="3.00" />
+	</rule>
+	<rule e="node" k="place" v="quarter" zoom-min="11" zoom-max="15">
+		<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="3.00" />
+	</rule>
+	<rule e="node" k="place" v="village" zoom-min="5" zoom-max="15">
+		<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="3.00" />
+	</rule>
+	<rule e="node" k="place" v="town" zoom-min="5" zoom-max="14">
+		<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="3.00" />
+	</rule>
+	<rule e="node" k="place" v="city" zoom-min="5" zoom-max="13">
+		<caption k="name" font-style="bold" font-size="20" fill="#000000" stroke="#ffffff" stroke-width="3.00" />
 	</rule>
 </rendertheme>

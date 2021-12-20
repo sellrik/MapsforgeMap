@@ -10,11 +10,11 @@ https://download.geofabrik.de/europe/hungary.html
 Opcionálisan az osm fájl is letölthető az előző lépésben   
 Budai-hegységre szűrve:  
 ```
-osmosis --read-pbf data\hungary-latest.osm.pbf --bounding-box top=47.629478 left=18.89465 bottom=47.453804 right=19.10751 --write-xml data\map.osm
+lib\osmosis\bin\osmosis.bat --read-pbf data\hungary-latest.osm.pbf --bounding-box top=47.629478 left=18.89465 bottom=47.453804 right=19.10751 --write-xml data\map.osm
 ```
 Az egész országra/szűrés nélkül:  
 ```
-osmosis --read-pbf data\hungary-latest.osm.pbf --write-xml data\map.osm 
+lib\osmosis\bin\osmosis.bat --read-pbf data\hungary-latest.osm.pbf --write-xml data\map.osm 
 ```
 3. Turistajelzések létrehozása:  
 
@@ -43,14 +43,14 @@ phyghtmap -a 16.11262:45.73218:22.90201:48.58766 -o out_file --write-timestamp -
 A második paraméternél a phyghtmap által generált fájl nevét kell megadni.
 
 ```
-osmosis --rx data/map_hiking_way.osm --rx data/map_hiking_symbol.osm --rx data/out_file_lon16.11_22.90lat45.73_48.59_srtm1v3.0.osm --merge --merge --wx data\map_hiking_srtm.osm  
+lib\osmosis\bin\osmosis.bat --rx data/map_hiking_way.osm --rx data/map_hiking_symbol.osm --rx data/out_file_lon16.11_22.90lat45.73_48.59_srtm1v3.0.osm --merge --merge --wx data\map_hiking_srtm.osm  
 ```
 
 6. Térkép elkészítése:  
 A tag-mapping.xml fájl tartalmazza a térkép által támogatott elemeket. Az új elemeket ide kell felvenni.
 
 ```
-osmosis --read-xml data\map_hiking_srtm.osm --mw file=data\final_map.map tag-conf-file=tag-mapping.xml
+lib\osmosis\bin\osmosis.bat --read-xml data\map_hiking_srtm.osm --mw file=data\final_map.map tag-conf-file=tag-mapping.xml
 ```
 
 Telepítés folyamat:
