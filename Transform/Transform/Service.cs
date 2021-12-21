@@ -578,12 +578,28 @@ namespace Transform
                 sw.WriteLine("\t</ways>");
 
                 sw.WriteLine("\t<!-- Hiking trail symbols -->");
-                for (int i = 1; i <= 3; i++)
+                for (int i = 1; i <= 4; i++)
                 {
                     sw.WriteLine("\t<pois>");
                     foreach (var item in supportedJelTags)
                     {
-                        sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{item}\" zoom-appear=\"14\" />");
+                        switch (i)
+                        {
+                            case 1:
+                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{item}\" zoom-appear=\"14\" />");
+                                break;
+                            case 2:
+                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{item}\" zoom-appear=\"15\" />");
+                                break;
+                            case 3:
+                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{item}\" zoom-appear=\"16\" />");
+                                break;
+                            case 4:
+                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{item}\" zoom-appear=\"17\" />");
+                                break;
+                            default:
+                                break;
+                        }
                     }
                     sw.WriteLine("\t</pois>");
                 }
@@ -616,13 +632,29 @@ namespace Transform
                     sw.WriteLine("\t</rule>");
                 }
 
-                for (int i = 1; i <= 3; i++)
+                for (int i = 1; i <= 4; i++)
                 {
                     foreach (var item in supportedJelTags)
                     {
                         var color = GetColor(item);
 
-                        sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{item}\" zoom-min=\"14\" zoom-max=\"14\">");
+                        switch (i)
+                        {
+                            case 1:
+                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{item}\" zoom-min=\"14\" zoom-max=\"14\" >");
+                                break;
+                            case 2:
+                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{item}\" zoom-min=\"15\" zoom-max=\"15\" >");
+                                break;
+                            case 3:
+                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{item}\" zoom-min=\"16\" zoom-max=\"16\" >");
+                                break;
+                            case 4:
+                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{item}\" zoom-min=\"17\" >");
+                                break;
+                            default:
+                                break;
+                        }
                         sw.WriteLine($"\t\t<symbol src=\"file:/symbol/jel_{item}.png\"/>");
                         sw.WriteLine("\t</rule>");
                     }
