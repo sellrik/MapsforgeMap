@@ -1,4 +1,4 @@
-C:\Users\Balazs\Downloads\platform-tools\adb.exe connect 192.168.0.100:43767
+REM C:\Users\Balazs\Downloads\platform-tools\adb.exe connect 192.168.0.100:43767
 
 C:\Users\Balazs\Downloads\platform-tools\adb.exe push data/hungary.map /sdcard/Locus/mapsVector/hungary.map
 

@@ -10,6 +10,15 @@ namespace Transform
 
             try
             {
+                var service = new Service();
+                var generateConfig = GetArgumentByName(args, "--generateConfig");
+
+                if (generateConfig)
+                {
+                    service.GenerateConfig();
+                    return;
+                }
+
                 var sourceFilenme = GetArgumentValueByName(args, "--source");
                 var targetFilename = GetArgumentValueByName(args, "--target");
 
@@ -17,9 +26,6 @@ namespace Transform
                 {
                     throw new ArgumentException("Invalid arguments");
                 }
-
-
-                var service = new Service();
 
                 var createTagNodes = GetArgumentByName(args, "--createTagNodes");
 

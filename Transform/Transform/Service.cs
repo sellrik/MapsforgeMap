@@ -12,6 +12,100 @@ namespace Transform
 {
     public class Service
     {
+        string[] supportedJelTags = new[]
+        {
+            "k",
+            "k+",
+            "k3",
+            "k4",
+            "kq",
+            "kb",
+            "kl",
+            "kpec",
+            "p",
+            "p+",
+            "p3",
+            "p4",
+            "pq",
+            "pb",
+            "pl",
+            "s",
+            "s+",
+            "s3",
+            "s4",
+            "sq",
+            "sb",
+            "sl",
+            "z",
+            "z+",
+            "z3",
+            "z4",
+            "zq",
+            "zb",
+            "zl",
+
+            "keml",
+            "ktmp",
+            "kt",
+            "katl",
+            "pc",
+            "peml",
+            "ptmp",
+            "pt",
+            "patl",
+            "sc",
+            "seml",
+            "stmp",
+            "st",
+            "satl",
+            "zc",
+            "zeml",
+            "ztmp",
+            "zt",
+            "zatl",
+            "ll",
+            "t",
+            "ltmp",
+
+            "lm",
+            "km",
+            "pm",
+            "sm",
+            "zm",
+            "smz",
+            "sgy",
+            "stj",
+            "ste",
+            "stm",
+
+            "palp",
+            "salp",
+
+            "but",
+            "kbor",
+            "pbor",
+            "sbor",
+            "zbor",
+            "zut"
+        };
+
+        Dictionary<string, string> jelTagColors = new Dictionary<string, string>()
+        {
+            { "k", "#0000ff" },
+            { "p", "#ff0000" },
+            { "z", "#008000" },
+            { "s", "#ffcc00" }
+        };
+
+        Dictionary<string, string> specialJelTagColors = new Dictionary<string, string>()
+        {
+            { "but", "#050505" },
+            { "ll", "#ac31d8" },
+            { "lm", "#6c207e" },
+            { "ltmp", "#6c207e" },
+            { "t", "#b0aaa0" }
+        };
+
         public void CopyTagsFromRelationToWay(string sourceFilename, string targetFilename)
         {
             var wayList = new HashSet<KeyValuePair<string, string>>(); // Way id, tag
@@ -104,43 +198,6 @@ namespace Transform
 
         public void CreateTagNodes(string sourceFilename, string targetFilename)
         {
-            var supportedJelTags = new[]
-            {
-                "k",
-                "k+",
-                "k3",
-                "k4",
-                "kq",
-                "kb",
-                "kl",
-                "kpec",
-                "p",
-                "p+",
-                "p3",
-                "p4",
-                "pq",
-                "pb",
-                "pl",
-                "s",
-                "s+",
-                "s3",
-                "s4",
-                "sq",
-                "sb",
-                "sl",
-                "z",
-                "z+",
-                "z3",
-                "z4",
-                "zq",
-                "zb",
-                "zl",
-                "kc",
-                "pc",
-                "sc",
-                "zc"
-            };
-
             var wayList = new List<Way>();
 
             using (var reader = XmlReader.Create(sourceFilename))
@@ -300,7 +357,7 @@ namespace Transform
             }
 
             var nodeQuery = wayList.SelectMany(i => i.Nodes)
-                .Join(wayNodes, i => i.Id, j => j.Id, (i,j) => new { i, j });
+                .Join(wayNodes, i => i.Id, j => j.Id, (i, j) => new { i, j });
 
             foreach (var item in nodeQuery)
             {
@@ -495,6 +552,67 @@ namespace Transform
                 }
 
                 sw.WriteLine("</osm>");
+            }
+        }
+
+        public void GenerateConfig()
+        {
+            using (var sw = new StreamWriter("config.txt"))
+            {
+                sw.WriteLine("Tag-mapping:");
+
+                sw.WriteLine("\t<!-- Hiking trails -->");
+                sw.WriteLine("\t<ways>");
+                foreach (var item in supportedJelTags)
+                {
+                    sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"{item}\" zoom-appear=\"13\" />");
+                }
+                sw.WriteLine("\t</ways>");
+
+                sw.WriteLine("\t<!-- Hiking trail symbols -->");
+                for (int i = 1; i <= 3; i++)
+                {
+                    sw.WriteLine("\t<pois>");
+                    foreach (var item in supportedJelTags)
+                    {
+                        sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{item}\" zoom-appear=\"14\" />");
+                    }
+                    sw.WriteLine("\t</pois>");
+                }
+
+                sw.WriteLine();
+                sw.WriteLine("Theme:");
+
+                foreach (var item in supportedJelTags)
+                {
+                    var color = GetColor(item);
+
+                    sw.WriteLine($"\t<rule e=\"way\" k=\"jel\" v =\"{item}\">");
+                    sw.WriteLine($"\t\t<line stroke=\"{color}\" stroke-width=\"5\"/>");
+                    sw.WriteLine("\t</rule>");
+                }
+
+                for (int i = 1; i <= 3; i++)
+                {
+                    foreach (var item in supportedJelTags)
+                    {
+                        var color = GetColor(item);
+
+                        sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{item}\" zoom-min=\"14\" zoom-max=\"14\">");
+                        sw.WriteLine($"\t\t<symbol src=\"file:/symbol/jel_{item}.png\"/>");
+                        sw.WriteLine("\t</rule>");
+                    }
+                }
+            }
+
+            string GetColor(string jel)
+            {
+                if (specialJelTagColors.TryGetValue(jel, out var value))
+                {
+                    return value;
+                }
+
+                return jelTagColors[jel.Substring(0, 1)];
             }
         }
 

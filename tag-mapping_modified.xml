@@ -508,6 +508,8 @@
         <osm-tag key="natural" value="water" zoom-appear="8" />
         <osm-tag key="natural" value="wetland" zoom-appear="12" />
         <osm-tag key="natural" value="wood" zoom-appear="8" />
+		
+		<osm-tag key="water" value="lake" zoom-appear="8" />
 
         <osm-tag key="waterway" value="canal" zoom-appear="10" />
         <osm-tag key="waterway" value="dam" zoom-appear="10" />
@@ -515,6 +517,7 @@
         <osm-tag key="waterway" value="river" zoom-appear="8" />
         <osm-tag key="waterway" value="riverbank" zoom-appear="8" />
         <osm-tag key="waterway" value="stream" zoom-appear="13" />
+		 <osm-tag key="waterway" value="ditch" zoom-appear="13" />
     </ways>
 
     <!-- LANDUSE TAGS -->

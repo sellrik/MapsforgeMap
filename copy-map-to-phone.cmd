@@ -1,6 +1,6 @@
 REM C:\Users\Balazs\Downloads\platform-tools\adb.exe connect 192.168.0.100:43767
 
-C:\Users\Balazs\Downloads\platform-tools\adb.exe push data/hungary.map /sdcard/Locus/mapsVector/hungary.map
+C:\Users\Balazs\Downloads\platform-tools\adb.exe push data/hungary.map /sdcard/Locus/mapsVector/
 
 C:\Users\Balazs\Downloads\platform-tools\adb.exe push themes/ /sdcard/Locus/mapsVector/_themes/test/
 
