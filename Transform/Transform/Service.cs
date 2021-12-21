@@ -106,6 +106,14 @@ namespace Transform
             { "t", "#b0aaa0" }
         };
 
+        List<KeyValuePair<string, int>> jelTagColorPriority = new List<KeyValuePair<string, int>>
+        {
+            new KeyValuePair<string, int>("k", 1),
+            new KeyValuePair<string, int>("p", 2),
+            new KeyValuePair<string, int>("z", 3),
+            new KeyValuePair<string, int>("s", 4),
+        };
+
         public void CopyTagsFromRelationToWay(string sourceFilename, string targetFilename)
         {
             var wayList = new HashSet<KeyValuePair<string, string>>(); // Way id, tag
@@ -583,7 +591,23 @@ namespace Transform
                 sw.WriteLine();
                 sw.WriteLine("Theme:");
 
-                foreach (var item in supportedJelTags)
+                var supportedJelTagsOrderedByPriority = supportedJelTags
+                    .Select(i => new
+                    {
+                        Value = i,
+                        Priority = jelTagColorPriority.FirstOrDefault(j => j.Key == i.Substring(0, 1)).Value
+                    })
+                    .Select(i => new
+                    {
+                        Value = i.Value,
+                        Priority = i.Priority == default(int) ? int.MaxValue : i.Priority,
+                    })
+                    .OrderByDescending(i => i.Priority)
+                    .ThenByDescending(i => i.Value.Length)
+                    .Select(i => i.Value)
+                    .ToArray();
+
+                foreach (var item in supportedJelTagsOrderedByPriority)
                 {
                     var color = GetColor(item);
 

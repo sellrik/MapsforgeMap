@@ -14,7 +14,7 @@ namespace Transform
     {
         static string[] SupportedJelTags = new[]
         {
-            "k",
+"k",
             "k+",
             "k3",
             "k4",
@@ -43,15 +43,57 @@ namespace Transform
             "zq",
             "zb",
             "zl",
-            "kc",
+
+            "keml",
+            "ktmp",
+            "kt",
+            "katl",
             "pc",
+            "peml",
+            "ptmp",
+            "pt",
+            "patl",
             "sc",
-            "zc"
+            "seml",
+            "stmp",
+            "st",
+            "satl",
+            "zc",
+            "zeml",
+            "ztmp",
+            "zt",
+            "zatl",
+            "ll",
+            "t",
+            "ltmp",
+
+            "lm",
+            "km",
+            "pm",
+            "sm",
+            "zm",
+            "smz",
+            "sgy",
+            "stj",
+            "ste",
+            "stm",
+
+            "palp",
+            "salp",
+
+            "but",
+            "kbor",
+            "pbor",
+            "sbor",
+            "zbor",
+            "zut"
         };
 
         public void CreateTrailmarks(string sourceFilename, string targetFilename)
         {
             var ways = GetWays(sourceFilename);
+
+            var test = ways.SelectMany(i => i.Tags).Distinct().ToList();
 
             AddNodesToWays(sourceFilename, ways);
 

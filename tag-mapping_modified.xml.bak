@@ -152,12 +152,47 @@
 		<osm-tag key="jel" value="zq" zoom-appear="13" />
 		<osm-tag key="jel" value="zb" zoom-appear="13" />
 		<osm-tag key="jel" value="zl" zoom-appear="13" />
-		<osm-tag key="jel" value="kc" zoom-appear="13" />
+		<osm-tag key="jel" value="keml" zoom-appear="13" />
+		<osm-tag key="jel" value="ktmp" zoom-appear="13" />
+		<osm-tag key="jel" value="kt" zoom-appear="13" />
+		<osm-tag key="jel" value="katl" zoom-appear="13" />
 		<osm-tag key="jel" value="pc" zoom-appear="13" />
+		<osm-tag key="jel" value="peml" zoom-appear="13" />
+		<osm-tag key="jel" value="ptmp" zoom-appear="13" />
+		<osm-tag key="jel" value="pt" zoom-appear="13" />
+		<osm-tag key="jel" value="patl" zoom-appear="13" />
 		<osm-tag key="jel" value="sc" zoom-appear="13" />
+		<osm-tag key="jel" value="seml" zoom-appear="13" />
+		<osm-tag key="jel" value="stmp" zoom-appear="13" />
+		<osm-tag key="jel" value="st" zoom-appear="13" />
+		<osm-tag key="jel" value="satl" zoom-appear="13" />
 		<osm-tag key="jel" value="zc" zoom-appear="13" />
-    </ways>
-	
+		<osm-tag key="jel" value="zeml" zoom-appear="13" />
+		<osm-tag key="jel" value="ztmp" zoom-appear="13" />
+		<osm-tag key="jel" value="zt" zoom-appear="13" />
+		<osm-tag key="jel" value="zatl" zoom-appear="13" />
+		<osm-tag key="jel" value="ll" zoom-appear="13" />
+		<osm-tag key="jel" value="t" zoom-appear="13" />
+		<osm-tag key="jel" value="ltmp" zoom-appear="13" />
+		<osm-tag key="jel" value="lm" zoom-appear="13" />
+		<osm-tag key="jel" value="km" zoom-appear="13" />
+		<osm-tag key="jel" value="pm" zoom-appear="13" />
+		<osm-tag key="jel" value="sm" zoom-appear="13" />
+		<osm-tag key="jel" value="zm" zoom-appear="13" />
+		<osm-tag key="jel" value="smz" zoom-appear="13" />
+		<osm-tag key="jel" value="sgy" zoom-appear="13" />
+		<osm-tag key="jel" value="stj" zoom-appear="13" />
+		<osm-tag key="jel" value="ste" zoom-appear="13" />
+		<osm-tag key="jel" value="stm" zoom-appear="13" />
+		<osm-tag key="jel" value="palp" zoom-appear="13" />
+		<osm-tag key="jel" value="salp" zoom-appear="13" />
+		<osm-tag key="jel" value="but" zoom-appear="13" />
+		<osm-tag key="jel" value="kbor" zoom-appear="13" />
+		<osm-tag key="jel" value="pbor" zoom-appear="13" />
+		<osm-tag key="jel" value="sbor" zoom-appear="13" />
+		<osm-tag key="jel" value="zbor" zoom-appear="13" />
+		<osm-tag key="jel" value="zut" zoom-appear="13" />
+	</ways>
 	<!-- Hiking trail symbols -->
 	<pois>
 		<osm-tag key="jel" value="l1_k" zoom-appear="14" />
@@ -189,116 +224,189 @@
 		<osm-tag key="jel" value="l1_zq" zoom-appear="14" />
 		<osm-tag key="jel" value="l1_zb" zoom-appear="14" />
 		<osm-tag key="jel" value="l1_zl" zoom-appear="14" />
-		<osm-tag key="jel" value="l1_kc" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_keml" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_ktmp" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_kt" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_katl" zoom-appear="14" />
 		<osm-tag key="jel" value="l1_pc" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_peml" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_ptmp" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_pt" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_patl" zoom-appear="14" />
 		<osm-tag key="jel" value="l1_sc" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_seml" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_stmp" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_st" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_satl" zoom-appear="14" />
 		<osm-tag key="jel" value="l1_zc" zoom-appear="14" />
-    </pois>
+		<osm-tag key="jel" value="l1_zeml" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_ztmp" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_zt" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_zatl" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_ll" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_t" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_ltmp" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_lm" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_km" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_pm" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_sm" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_zm" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_smz" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_sgy" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_stj" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_ste" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_stm" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_palp" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_salp" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_but" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_kbor" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_pbor" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_sbor" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_zbor" zoom-appear="14" />
+		<osm-tag key="jel" value="l1_zut" zoom-appear="14" />
+	</pois>
 	<pois>
-		<osm-tag key="jel" value="l2_k" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_k+" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_k3" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_k4" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_kq" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_kb" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_kl" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_kpec" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_p" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_p+" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_p3" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_p4" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_pq" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_pb" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_pl" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_s" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_s+" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_s3" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_s4" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_sq" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_sb" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_sl" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_z" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_z+" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_z3" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_z4" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_zq" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_zb" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_zl" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_kc" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_pc" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_sc" zoom-appear="15" />
-		<osm-tag key="jel" value="l2_zc" zoom-appear="15" />
-    </pois>
+		<osm-tag key="jel" value="l2_k" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_k+" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_k3" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_k4" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_kq" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_kb" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_kl" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_kpec" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_p" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_p+" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_p3" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_p4" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_pq" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_pb" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_pl" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_s" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_s+" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_s3" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_s4" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_sq" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_sb" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_sl" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_z" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_z+" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_z3" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_z4" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_zq" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_zb" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_zl" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_keml" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_ktmp" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_kt" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_katl" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_pc" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_peml" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_ptmp" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_pt" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_patl" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_sc" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_seml" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_stmp" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_st" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_satl" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_zc" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_zeml" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_ztmp" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_zt" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_zatl" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_ll" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_t" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_ltmp" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_lm" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_km" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_pm" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_sm" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_zm" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_smz" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_sgy" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_stj" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_ste" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_stm" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_palp" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_salp" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_but" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_kbor" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_pbor" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_sbor" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_zbor" zoom-appear="14" />
+		<osm-tag key="jel" value="l2_zut" zoom-appear="14" />
+	</pois>
 	<pois>
-		<osm-tag key="jel" value="l3_k" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_k+" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_k3" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_k4" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_kq" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_kb" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_kl" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_kpec" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_p" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_p+" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_p3" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_p4" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_pq" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_pb" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_pl" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_s" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_s+" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_s3" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_s4" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_sq" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_sb" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_sl" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_z" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_z+" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_z3" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_z4" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_zq" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_zb" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_zl" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_kc" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_pc" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_sc" zoom-appear="16" />
-		<osm-tag key="jel" value="l3_zc" zoom-appear="16" />
-    </pois>
-	<pois>
-		<osm-tag key="jel" value="l4_k" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_k+" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_k3" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_k4" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_kq" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_kb" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_kl" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_kpec" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_p" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_p+" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_p3" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_p4" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_pq" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_pb" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_pl" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_s" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_s+" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_s3" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_s4" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_sq" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_sb" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_sl" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_z" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_z+" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_z3" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_z4" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_zq" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_zb" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_zl" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_kc" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_pc" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_sc" zoom-appear="17" />
-		<osm-tag key="jel" value="l4_zc" zoom-appear="17" />
-    </pois>
+		<osm-tag key="jel" value="l3_k" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_k+" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_k3" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_k4" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_kq" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_kb" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_kl" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_kpec" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_p" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_p+" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_p3" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_p4" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_pq" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_pb" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_pl" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_s" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_s+" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_s3" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_s4" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_sq" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_sb" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_sl" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_z" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_z+" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_z3" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_z4" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_zq" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_zb" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_zl" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_keml" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_ktmp" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_kt" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_katl" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_pc" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_peml" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_ptmp" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_pt" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_patl" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_sc" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_seml" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_stmp" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_st" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_satl" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_zc" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_zeml" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_ztmp" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_zt" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_zatl" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_ll" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_t" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_ltmp" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_lm" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_km" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_pm" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_sm" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_zm" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_smz" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_sgy" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_stj" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_ste" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_stm" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_palp" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_salp" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_but" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_kbor" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_pbor" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_sbor" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_zbor" zoom-appear="14" />
+		<osm-tag key="jel" value="l3_zut" zoom-appear="14" />
+	</pois>
 	
     <!-- ************* POIS *************** -->
 
@@ -517,7 +625,7 @@
         <osm-tag key="waterway" value="river" zoom-appear="8" />
         <osm-tag key="waterway" value="riverbank" zoom-appear="8" />
         <osm-tag key="waterway" value="stream" zoom-appear="13" />
-		 <osm-tag key="waterway" value="drain" zoom-appear="13" />
+		 <osm-tag key="waterway" value="ditch" zoom-appear="13" />
     </ways>
 
     <!-- LANDUSE TAGS -->

@@ -2,7 +2,7 @@
   "profiles": {
     "Transform": {
       "commandName": "Project",
-      "commandLineArgs": "--generateConfig"
+      "commandLineArgs": "--source ..\\..\\..\\..\\..\\data\\map.osm --target ..\\..\\..\\..\\..\\data\\map_hiking_symbol.osm --createTagNodes"
     }
   }
 }
