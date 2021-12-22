@@ -14,7 +14,7 @@ namespace Transform
     {
         static string[] SupportedJelTags = new[]
         {
-"k",
+            "k",
             "k+",
             "k3",
             "k4",
@@ -44,6 +44,7 @@ namespace Transform
             "zb",
             "zl",
 
+            "kc",
             "keml",
             "ktmp",
             "kt",
@@ -89,6 +90,31 @@ namespace Transform
             "zut"
         };
 
+        Dictionary<string, string> jelTagColors = new Dictionary<string, string>()
+        {
+            { "k", "#0000ff" },
+            { "p", "#ff0000" },
+            { "z", "#008000" },
+            { "s", "#ffcc00" }
+        };
+
+        Dictionary<string, string> specialJelTagColors = new Dictionary<string, string>()
+        {
+            { "but", "#050505" },
+            { "ll", "#ac31d8" },
+            { "lm", "#6c207e" },
+            { "ltmp", "#6c207e" },
+            { "t", "#b0aaa0" }
+        };
+
+        List<KeyValuePair<string, int>> jelTagColorPriority = new List<KeyValuePair<string, int>>
+        {
+            new KeyValuePair<string, int>("k", 1),
+            new KeyValuePair<string, int>("p", 2),
+            new KeyValuePair<string, int>("z", 3),
+            new KeyValuePair<string, int>("s", 4),
+        };
+
         public void CreateTrailmarks(string sourceFilename, string targetFilename)
         {
             var ways = GetWays(sourceFilename);
@@ -101,17 +127,17 @@ namespace Transform
 
             CalcalateDistanceOfWay(ways);
 
-            var x = ways.Max(i => i.Tags.Count());
-            var y = ways.Where(i => i.Tags.Count() == x).ToList();
-            var z = ways
-                .GroupBy(i => i.Tags.Count())
-                .Select(i => new
-                {
-                    TagCount = i.Key,
-                    NumberOfWays = i.Count()
-                })
-                .OrderBy(i => i.TagCount)
-                .ToList();
+            //var x = ways.Max(i => i.Tags.Count());
+            //var y = ways.Where(i => i.Tags.Count() == x).ToList();
+            //var z = ways
+            //    .GroupBy(i => i.Tags.Count())
+            //    .Select(i => new
+            //    {
+            //        TagCount = i.Key,
+            //        NumberOfWays = i.Count()
+            //    })
+            //    .OrderBy(i => i.TagCount)
+            //    .ToList();
 
             var nodesLevel4 = CreateTrailmarkNodes(ways, distanceBetweenNodes: 100, distanceBetweenMultileTags: 20, "l4_");
             var nodesLevel3 = CreateTrailmarkNodes(ways, distanceBetweenNodes: 250, distanceBetweenMultileTags: 50, "l3_");
@@ -124,12 +150,13 @@ namespace Transform
             nodes.AddRange(nodesLevel3);
             nodes.AddRange(nodesLevel4);
 
-            WriteToFile(sourceFilename, targetFilename, nodes);
+            WriteToFile(sourceFilename, targetFilename, nodes, ways);
         }
 
         public List<Way> GetWays(string sourceFilename)
         {
             var wayList = new List<Way>();
+            var unkownJelTags = new List<string>();
 
             using (var reader = XmlReader.Create(sourceFilename))
             {
@@ -155,6 +182,11 @@ namespace Transform
 
                                     if (!SupportedJelTags.Contains(jelValue))
                                     {
+                                        if (!unkownJelTags.Contains(jelValue))
+                                        {
+                                            unkownJelTags.Add(jelValue);
+                                        }
+
                                         continue;
                                     }
 
@@ -421,11 +453,13 @@ namespace Transform
         }
 
         public void WriteToFile(
-            string sourceFilename,
-            string targetFilename,
-            List<Node> nodeList)
+           string sourceFilename,
+           string targetFilename,
+           List<Node> nodeList,
+           List<Way> wayList)
         {
             var nodeIdCounter = 100000000000;
+            var wayIdCounter = 200000000000;
 
             var boundsNode = string.Empty;
             using (var reader = XmlReader.Create(sourceFilename))
@@ -445,6 +479,8 @@ namespace Transform
                 }
             }
 
+            var allNodes = new List<Node>();
+
             using (var sw = new StreamWriter(targetFilename, false))
             {
                 sw.WriteLine("<?xml version='1.0' encoding='UTF-8'?>");
@@ -455,19 +491,170 @@ namespace Transform
 
                 foreach (var node in nodeList)
                 {
-                    var nodeText = $"  <node id=\"{++nodeIdCounter}\" version=\"1\" timestamp =\"{timestamp}\" uid=\"0\" user=\"\" lat =\"{node.Lat.ToString(CultureInfo.InvariantCulture)}\" lon=\"{node.Lon.ToString(CultureInfo.InvariantCulture)}\">";
+                    node.Id = (++nodeIdCounter).ToString();
+                    allNodes.Add(node);
+                }
+
+                foreach (var way in wayList)
+                {
+                    way.Id = (++wayIdCounter).ToString();
+
+                    foreach (var node in way.Nodes)
+                    {
+                        node.Id = (++nodeIdCounter).ToString();
+                        allNodes.Add(new Node
+                        {
+                            Id = node.Id,
+                            Lat = node.Lat,
+                            Lon = node.Lon,
+                            Tags = way.Tags,
+                        });
+                    }
+                }
+
+                foreach (var node in allNodes)
+                {
+                    var nodeText = $"\t<node id=\"{node.Id}\" version=\"1\" timestamp =\"{timestamp}\" uid=\"0\" user=\"\" lat =\"{node.Lat.ToString(CultureInfo.InvariantCulture)}\" lon=\"{node.Lon.ToString(CultureInfo.InvariantCulture)}\">";
 
                     sw.WriteLine(nodeText);
 
                     foreach (var tag in node.Tags)
                     {
-                        sw.WriteLine($"     <tag k=\"jel\" v=\"{tag}\" />");
+                        sw.WriteLine($"\t\t<tag k=\"jel\" v=\"{tag}\" />");
                     }
 
-                    sw.WriteLine("  </node>");
+                    sw.WriteLine("\t</node>");
+                }
+
+                foreach (var way in wayList)
+                {
+                    var nodeText = $"\t<way id=\"{way.Id}\" timestamp =\"{timestamp}\" uid=\"0\" user=\"\" visible=\"true\" version=\"1\" changeset=\"0\">";
+
+                    sw.WriteLine(nodeText);
+
+                    foreach (var node in way.Nodes)
+                    {
+                        sw.WriteLine($"\t\t<nd ref=\"{node.Id}\" />");
+                    }
+
+                    foreach (var tag in way.Tags)
+                    {
+                        sw.WriteLine($"\t\t<tag k=\"jel\" v=\"{tag}\" />");
+                    }
+
+                    sw.WriteLine("\t</way>");
                 }
 
                 sw.WriteLine("</osm>");
+            }
+        }
+
+        public void GenerateConfig()
+        {
+            using (var sw = new StreamWriter("config.txt"))
+            {
+                sw.WriteLine("Tag-mapping:");
+
+                sw.WriteLine("\t<!-- Hiking trails -->");
+                sw.WriteLine("\t<ways>");
+                foreach (var item in SupportedJelTags)
+                {
+                    sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"{item}\" zoom-appear=\"13\" />");
+                }
+                sw.WriteLine("\t</ways>");
+
+                sw.WriteLine("\t<!-- Hiking trail symbols -->");
+                for (int i = 1; i <= 4; i++)
+                {
+                    sw.WriteLine("\t<pois>");
+                    foreach (var item in SupportedJelTags)
+                    {
+                        switch (i)
+                        {
+                            case 1:
+                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{item}\" zoom-appear=\"14\" />");
+                                break;
+                            case 2:
+                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{item}\" zoom-appear=\"15\" />");
+                                break;
+                            case 3:
+                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{item}\" zoom-appear=\"16\" />");
+                                break;
+                            case 4:
+                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{item}\" zoom-appear=\"17\" />");
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    sw.WriteLine("\t</pois>");
+                }
+
+                sw.WriteLine();
+                sw.WriteLine("Theme:");
+
+                var supportedJelTagsOrderedByPriority = SupportedJelTags
+                    .Select(i => new
+                    {
+                        Value = i,
+                        Priority = jelTagColorPriority.FirstOrDefault(j => j.Key == i.Substring(0, 1)).Value
+                    })
+                    .Select(i => new
+                    {
+                        Value = i.Value,
+                        Priority = i.Priority == default(int) ? int.MaxValue : i.Priority,
+                    })
+                    .OrderByDescending(i => i.Priority)
+                    .ThenByDescending(i => i.Value.Length)
+                    .Select(i => i.Value)
+                    .ToArray();
+
+                foreach (var item in supportedJelTagsOrderedByPriority)
+                {
+                    var color = GetColor(item);
+
+                    sw.WriteLine($"\t<rule e=\"way\" k=\"jel\" v =\"{item}\">");
+                    sw.WriteLine($"\t\t<line stroke=\"{color}\" stroke-width=\"5\"/>");
+                    sw.WriteLine("\t</rule>");
+                }
+
+                for (int i = 1; i <= 4; i++)
+                {
+                    foreach (var item in SupportedJelTags)
+                    {
+                        var color = GetColor(item);
+
+                        switch (i)
+                        {
+                            case 1:
+                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{item}\" zoom-min=\"14\" zoom-max=\"14\" >");
+                                break;
+                            case 2:
+                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{item}\" zoom-min=\"15\" zoom-max=\"15\" >");
+                                break;
+                            case 3:
+                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{item}\" zoom-min=\"16\" zoom-max=\"16\" >");
+                                break;
+                            case 4:
+                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{item}\" zoom-min=\"17\" >");
+                                break;
+                            default:
+                                break;
+                        }
+                        sw.WriteLine($"\t\t<symbol src=\"file:/symbol/jel_{item}.png\"/>");
+                        sw.WriteLine("\t</rule>");
+                    }
+                }
+            }
+
+            string GetColor(string jel)
+            {
+                if (specialJelTagColors.TryGetValue(jel, out var value))
+                {
+                    return value;
+                }
+
+                return jelTagColors[jel.Substring(0, 1)];
             }
         }
     }

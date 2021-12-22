@@ -7,15 +7,15 @@ namespace Transform
     {
         static void Main(string[] args)
         {
-
             try
             {
-                var service = new Service();
+                var trailmarkService = new TrailmarkService();
+
                 var generateConfig = GetArgumentByName(args, "--generateConfig");
 
                 if (generateConfig)
                 {
-                    service.GenerateConfig();
+                    trailmarkService.GenerateConfig();
                     return;
                 }
 
@@ -27,18 +27,7 @@ namespace Transform
                     throw new ArgumentException("Invalid arguments");
                 }
 
-                var createTagNodes = GetArgumentByName(args, "--createTagNodes");
-
-                if (!createTagNodes)
-                {
-                    service.CopyTagsFromRelationToWay(sourceFilenme, targetFilename);
-                }
-                else
-                {
-                    var trailmarkService = new TrailmarkService();
-                    trailmarkService.CreateTrailmarks(sourceFilenme, targetFilename);
-                    //service.CopyTagsFromRelationToWay(sourceFilenme, targetFilename);
-                }
+                trailmarkService.CreateTrailmarks(sourceFilenme, targetFilename);
             }
             catch (Exception ex)
             {

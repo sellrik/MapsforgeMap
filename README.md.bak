@@ -19,12 +19,8 @@ lib\osmosis\bin\osmosis.bat --read-pbf data\hungary-latest.osm.pbf --write-xml d
 3. Turistajelzések létrehozása:  
 
 ```
-lib\transform\Transform.exe --source data\map.osm --target data\map_hiking_way.osm  
+lib\transform\Transform.exe --source data\map.osm --target data\map_trailmarks.osm  
 ```
-
-```
-lib\transform\Transform.exe --source data\map.osm --target data\map_hiking_symbol.osm --createTagNodes
-``
 
 4. Szintvonalak létrehozása:  
 Ide felöltöttem az országra legenerált szintvonalakat:  
@@ -39,18 +35,22 @@ Az egész országra:
 phyghtmap -a 16.11262:45.73218:22.90201:48.58766 -o out_file --write-timestamp --max-nodes-per-tile=0 --max-nodes-per-way=200 --start-node-id=10000000000 --start-way-id=10000000000 --source=srtm1 --srtm-version=3.0
 ```
 
-5. A két adathalmaz egyesítése (térkép + turistajelzések +  szintvonal):  
+5. Adatok egyesítése
 A második paraméternél a phyghtmap által generált fájl nevét kell megadni.
 
 ```
-lib\osmosis\bin\osmosis.bat --rx data/map_hiking_way.osm --rx data/map_hiking_symbol.osm --rx data/out_file_lon16.11_22.90lat45.73_48.59_srtm1v3.0.osm --merge --merge --wx data\map_hiking_srtm.osm  
+lib\osmosis\bin\osmosis.bat --rx data/map.osm --rx data/out_file_lon16.11_22.90lat45.73_48.59_srtm1v3.0.osm --merge --wx data\map_srtm.osm  
+```
+
+```
+lib\osmosis\bin\osmosis.bat --rx data/map_srtm.osm --rx data/map_trailmarks.osm --merge --wx data\map_srtm_trailmarks.osm  
 ```
 
 6. Térkép elkészítése:  
 A tag-mapping.xml fájl tartalmazza a térkép által támogatott elemeket. Az új elemeket ide kell felvenni.
 
 ```
-osmosis --read-xml data\map_hiking_srtm.osm --mw file=data\final_map.map tag-conf-file=tag-mapping.xml
+lib\osmosis\bin\osmosis.bat --read-xml data\map_srtm_trailmarks.osm --mw file=data\final_map.map tag-conf-file=tag-mapping.xml
 ```
 
 Telepítés folyamat:
