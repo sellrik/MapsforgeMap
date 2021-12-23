@@ -10,4 +10,4 @@ call lib\osmosis\bin\osmosis.bat --rx data/map.osm --rx data/out_file_lon16.11_2
 call lib\osmosis\bin\osmosis.bat --rx data/map_srtm.osm --rx data/map_trailmarks.osm --merge --wx data\map_srtm_trailmarks.osm
 
 echo Creating map
-call lib\osmosis\bin\osmosis.bat --read-xml data\map_hiking_srtm.osm --mw file=data\budai-hegyseg.map bbox=47.453804,18.89465,47.629478,19.10751 tag-conf-file=tag-mapping_modified.xml
+call lib\osmosis\bin\osmosis.bat --read-xml data\map_srtm_trailmarks.osm --mw file=data\budai-hegyseg.map bbox=47.453804,18.89465,47.629478,19.10751 tag-conf-file=tag-mapping_modified.xml

@@ -139,10 +139,10 @@ namespace Transform
             //    .OrderBy(i => i.TagCount)
             //    .ToList();
 
-            var nodesLevel4 = CreateTrailmarkNodes(ways, distanceBetweenNodes: 100, distanceBetweenMultileTags: 20, "l4_");
-            var nodesLevel3 = CreateTrailmarkNodes(ways, distanceBetweenNodes: 250, distanceBetweenMultileTags: 50, "l3_");
-            var nodesLevel2 = CreateTrailmarkNodes(ways, distanceBetweenNodes: 500, distanceBetweenMultileTags: 100, "l2_");
-            var nodesLevel1 = CreateTrailmarkNodes(ways, distanceBetweenNodes: 1000, distanceBetweenMultileTags: 200, "l1_");
+            var nodesLevel4 = CreateTrailmarkNodes(ways, distanceBetweenTrailmarks: 100, distanceBetweenMultileTags: 20, "l4_");
+            var nodesLevel3 = CreateTrailmarkNodes(ways, distanceBetweenTrailmarks: 250, distanceBetweenMultileTags: 50, "l3_");
+            var nodesLevel2 = CreateTrailmarkNodes(ways, distanceBetweenTrailmarks: 500, distanceBetweenMultileTags: 100, "l2_");
+            var nodesLevel1 = CreateTrailmarkNodes(ways, distanceBetweenTrailmarks: 1000, distanceBetweenMultileTags: 200, "l1_");
 
             var nodes = new List<Node>();
             nodes.AddRange(nodesLevel1);
@@ -355,6 +355,7 @@ namespace Transform
                     .ToArray();
 
                 var distanceOfWay = 0d;
+                var cumulativeDistance = 0d;
 
                 for (int i = 1; i < nodes.Length; i++)
                 {
@@ -362,7 +363,10 @@ namespace Transform
                     var node = nodes[i];
 
                     var distanceBetweenNodes = Utils.CalculateDistance(previousNode.Lat, previousNode.Lon, node.Lat, node.Lon);
+                    cumulativeDistance += distanceBetweenNodes;
+
                     node.DistanceFromPreviousNode = distanceBetweenNodes;
+                    node.CumulativeDistance = cumulativeDistance;
                     distanceOfWay += distanceBetweenNodes;
                 }
 
@@ -372,7 +376,7 @@ namespace Transform
 
         public List<Node> CreateTrailmarkNodes(
           List<Way> wayList,
-          int distanceBetweenNodes,
+          int distanceBetweenTrailmarks,
           int distanceBetweenMultileTags,
           string tagPrefix)
         {
@@ -391,42 +395,35 @@ namespace Transform
 
                 var offset = 0;
 
-                int wayDistanceBetweenNodes;
+                int wayDistanceBetweenTrailmarks;
 
-                if (way.Distance < distanceBetweenNodes)
+                if (way.Distance < distanceBetweenTrailmarks)
                 {
-                    wayDistanceBetweenNodes = (int)Math.Round(way.Distance / 2, 0);
+                    wayDistanceBetweenTrailmarks = (int)Math.Round(way.Distance / 2, 0);
                 }
                 else
                 {
-                    wayDistanceBetweenNodes = distanceBetweenNodes;
+                    wayDistanceBetweenTrailmarks = distanceBetweenTrailmarks;
                 }
 
-                for (int i = 0; i < way.Tags.Count(); i++)
+                if (wayDistanceBetweenTrailmarks == 0)
                 {
-                    var cumulativeDistance = 0d;
+                    continue;
+                }
 
-                    var nextNodeDistance = wayDistanceBetweenNodes + offset;
+                foreach (var tag in way.Tags)
+                {
+                    var nextTrailmarkDistane = wayDistanceBetweenTrailmarks + offset;
 
-                    var tag = way.Tags[i];
-
-                    for (int j = 1; j < nodes.Length; j++)
+                    for (int nodeIndex = 1; nodeIndex < way.Nodes.Count; nodeIndex++)
                     {
-                        var previousNode = nodes[j - 1];
-                        var node = nodes[j];
+                        var node = way.Nodes[nodeIndex];
+                        var previousNode = way.Nodes[nodeIndex - 1];
 
-                        var newCumulativeDistance = cumulativeDistance + node.DistanceFromPreviousNode;
-
-                        if (newCumulativeDistance >= way.Distance)
+                        while (node.CumulativeDistance > nextTrailmarkDistane)
                         {
-                            break;
-                        }
-
-                        if (newCumulativeDistance >= nextNodeDistance)
-                        {
-                            var diff = newCumulativeDistance - nextNodeDistance;
+                            var diff = nextTrailmarkDistane - previousNode.CumulativeDistance;
                             var fraction = diff / node.DistanceFromPreviousNode;
-                            fraction = 1 - fraction;
                             Utils.CalculateIntermediatePoint(previousNode.Lat, previousNode.Lon, node.Lat, node.Lon, fraction, out var lat, out var lon);
 
                             nodeList.Add(new Node
@@ -439,10 +436,8 @@ namespace Transform
                                 }
                             });
 
-                            nextNodeDistance += wayDistanceBetweenNodes;
+                            nextTrailmarkDistane += wayDistanceBetweenTrailmarks;
                         }
-
-                        cumulativeDistance += node.DistanceFromPreviousNode;
                     }
 
                     offset += distanceBetweenMultileTags;
@@ -506,8 +501,7 @@ namespace Transform
                         {
                             Id = node.Id,
                             Lat = node.Lat,
-                            Lon = node.Lon,
-                            Tags = way.Tags,
+                            Lon = node.Lon
                         });
                     }
                 }

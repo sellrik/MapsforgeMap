@@ -15,5 +15,7 @@ namespace Transform.Model
         public double Lon { get; set; }
 
         public double DistanceFromPreviousNode { get; set; }
+
+        public double CumulativeDistance { get; set; }
     }
 }
