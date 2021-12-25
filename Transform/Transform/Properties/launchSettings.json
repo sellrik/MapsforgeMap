@@ -2,7 +2,8 @@
   "profiles": {
     "Transform": {
       "commandName": "Project",
-      "commandLineArgs": "--source ..\\..\\..\\..\\..\\data\\map.osm --target ..\\..\\..\\..\\..\\data\\map_trailmarks.osm"
+      /*"commandLineArgs": "--source ..\\..\\..\\..\\..\\data\\map.osm --target ..\\..\\..\\..\\..\\data\\map_trailmarks.osm"*/
+      "commandLineArgs": "--generateConfig"
     }
   }
 }

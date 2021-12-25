@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -12,114 +13,19 @@ namespace Transform
 {
     public class TrailmarkService
     {
-        static string[] SupportedJelTags = new[]
+        private readonly ConfigModel _config;
+
+        public TrailmarkService()
         {
-            "k",
-            "k+",
-            "k3",
-            "k4",
-            "kq",
-            "kb",
-            "kl",
-            "kpec",
-            "p",
-            "p+",
-            "p3",
-            "p4",
-            "pq",
-            "pb",
-            "pl",
-            "s",
-            "s+",
-            "s3",
-            "s4",
-            "sq",
-            "sb",
-            "sl",
-            "z",
-            "z+",
-            "z3",
-            "z4",
-            "zq",
-            "zb",
-            "zl",
-
-            "kc",
-            "keml",
-            "ktmp",
-            "kt",
-            "katl",
-            "pc",
-            "peml",
-            "ptmp",
-            "pt",
-            "patl",
-            "sc",
-            "seml",
-            "stmp",
-            "st",
-            "satl",
-            "zc",
-            "zeml",
-            "ztmp",
-            "zt",
-            "zatl",
-            "ll",
-            "t",
-            "ltmp",
-
-            "lm",
-            "km",
-            "pm",
-            "sm",
-            "zm",
-            "smz",
-            "sgy",
-            "stj",
-            "ste",
-            "stm",
-
-            "palp",
-            "salp",
-
-            "but",
-            "kbor",
-            "pbor",
-            "sbor",
-            "zbor",
-            "zut"
-        };
-
-        Dictionary<string, string> jelTagColors = new Dictionary<string, string>()
-        {
-            { "k", "#0000ff" },
-            { "p", "#ff0000" },
-            { "z", "#008000" },
-            { "s", "#ffcc00" }
-        };
-
-        Dictionary<string, string> specialJelTagColors = new Dictionary<string, string>()
-        {
-            { "but", "#050505" },
-            { "ll", "#ac31d8" },
-            { "lm", "#6c207e" },
-            { "ltmp", "#6c207e" },
-            { "t", "#b0aaa0" }
-        };
-
-        List<KeyValuePair<string, int>> jelTagColorPriority = new List<KeyValuePair<string, int>>
-        {
-            new KeyValuePair<string, int>("k", 1),
-            new KeyValuePair<string, int>("p", 2),
-            new KeyValuePair<string, int>("z", 3),
-            new KeyValuePair<string, int>("s", 4),
-        };
+            var json = File.ReadAllText("config.json");
+            _config = JsonConvert.DeserializeObject<ConfigModel>(json);
+        }
 
         public void CreateTrailmarks(string sourceFilename, string targetFilename)
         {
             var ways = GetWays(sourceFilename);
 
-            var test = ways.SelectMany(i => i.Tags).Distinct().ToList();
+            //var test = ways.SelectMany(i => i.Tags).Distinct().ToList();
 
             AddNodesToWays(sourceFilename, ways);
 
@@ -180,7 +86,7 @@ namespace Transform
                                 {
                                     var jelValue = jelElement.Attribute("v").Value;
 
-                                    if (!SupportedJelTags.Contains(jelValue))
+                                    if (!_config.Trailmarks.Any(i => i.Jel == jelValue))
                                     {
                                         if (!unkownJelTags.Contains(jelValue))
                                         {
@@ -551,31 +457,33 @@ namespace Transform
 
                 sw.WriteLine("\t<!-- Hiking trails -->");
                 sw.WriteLine("\t<ways>");
-                foreach (var item in SupportedJelTags)
+
+                foreach (var trailmark in _config.Trailmarks)
                 {
-                    sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"{item}\" zoom-appear=\"13\" />");
+                    sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"{trailmark.Jel}\" zoom-appear=\"13\" />");
                 }
+
                 sw.WriteLine("\t</ways>");
 
                 sw.WriteLine("\t<!-- Hiking trail symbols -->");
                 for (int i = 1; i <= 4; i++)
                 {
                     sw.WriteLine("\t<pois>");
-                    foreach (var item in SupportedJelTags)
+                    foreach (var trailmark in _config.Trailmarks)
                     {
                         switch (i)
                         {
                             case 1:
-                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{item}\" zoom-appear=\"14\" />");
+                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{trailmark.Jel}\" zoom-appear=\"14\" />");
                                 break;
                             case 2:
-                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{item}\" zoom-appear=\"15\" />");
+                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{trailmark.Jel}\" zoom-appear=\"15\" />");
                                 break;
                             case 3:
-                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{item}\" zoom-appear=\"16\" />");
+                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{trailmark.Jel}\" zoom-appear=\"16\" />");
                                 break;
                             case 4:
-                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{item}\" zoom-appear=\"17\" />");
+                                sw.WriteLine($"\t\t<osm-tag key=\"jel\" value=\"l{i}_{trailmark.Jel}\" zoom-appear=\"17\" />");
                                 break;
                             default:
                                 break;
@@ -587,68 +495,51 @@ namespace Transform
                 sw.WriteLine();
                 sw.WriteLine("Theme:");
 
-                var supportedJelTagsOrderedByPriority = SupportedJelTags
-                    .Select(i => new
-                    {
-                        Value = i,
-                        Priority = jelTagColorPriority.FirstOrDefault(j => j.Key == i.Substring(0, 1)).Value
-                    })
-                    .Select(i => new
-                    {
-                        Value = i.Value,
-                        Priority = i.Priority == default(int) ? int.MaxValue : i.Priority,
-                    })
+                var trailmarksOrderedByPriority = _config.Trailmarks
                     .OrderByDescending(i => i.Priority)
-                    .ThenByDescending(i => i.Value.Length)
-                    .Select(i => i.Value)
+                    .ThenByDescending(i => i.Jel.Length)
                     .ToArray();
 
-                foreach (var item in supportedJelTagsOrderedByPriority)
+                foreach (var trailmark in trailmarksOrderedByPriority)
                 {
-                    var color = GetColor(item);
+                    var color = _config.Colors.FirstOrDefault(i => i.Name == trailmark.ColorName)?.Name;
+                    if (color == null)
+                    {
+                        Console.WriteLine($"Color was not found: {trailmark.ColorName}");
+                        continue;
+                    }
 
-                    sw.WriteLine($"\t<rule e=\"way\" k=\"jel\" v =\"{item}\">");
+                    sw.WriteLine($"\t<rule e=\"way\" k=\"jel\" v =\"{trailmark.Jel}\">");
                     sw.WriteLine($"\t\t<line stroke=\"{color}\" stroke-width=\"5\"/>");
                     sw.WriteLine("\t</rule>");
                 }
 
                 for (int i = 1; i <= 4; i++)
                 {
-                    foreach (var item in SupportedJelTags)
+                    foreach (var trailmark in _config.Trailmarks)
                     {
-                        var color = GetColor(item);
 
                         switch (i)
                         {
                             case 1:
-                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{item}\" zoom-min=\"14\" zoom-max=\"14\" >");
+                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{trailmark.Jel}\" zoom-min=\"14\" zoom-max=\"14\" >");
                                 break;
                             case 2:
-                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{item}\" zoom-min=\"15\" zoom-max=\"15\" >");
+                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{trailmark.Jel}\" zoom-min=\"15\" zoom-max=\"15\" >");
                                 break;
                             case 3:
-                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{item}\" zoom-min=\"16\" zoom-max=\"16\" >");
+                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{trailmark.Jel}\" zoom-min=\"16\" zoom-max=\"16\" >");
                                 break;
                             case 4:
-                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{item}\" zoom-min=\"17\" >");
+                                sw.WriteLine($"\t<rule e=\"node\" k=\"jel\" v=\"l{i}_{trailmark.Jel}\" zoom-min=\"17\" >");
                                 break;
                             default:
                                 break;
                         }
-                        sw.WriteLine($"\t\t<symbol src=\"file:/symbol/jel_{item}.png\"/>");
+                        sw.WriteLine($"\t\t<symbol src=\"file:/symbol/jel_{trailmark.Jel}.png\"/>");
                         sw.WriteLine("\t</rule>");
                     }
                 }
-            }
-
-            string GetColor(string jel)
-            {
-                if (specialJelTagColors.TryGetValue(jel, out var value))
-                {
-                    return value;
-                }
-
-                return jelTagColors[jel.Substring(0, 1)];
             }
         }
     }
