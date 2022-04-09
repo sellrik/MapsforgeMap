@@ -1,0 +1,1340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rendertheme xmlns="http://mapsforge.org/renderTheme" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme ../renderTheme.xsd" version="1" map-background="#F8F8F8">
+	<rule e="way" k="landuse" v="allotments">
+		<area fill="#c9e1bf"/>
+	</rule>
+	<rule e="way" k="landuse" v="farmland">
+		<area fill="#eef0d5"/>
+	</rule>
+	<rule e="way" k="landuse" v="grass|meadow|village_green">
+		<area fill="#cdebb0"/>
+	</rule>
+	<rule e="way" k="landuse" v="residential">
+		<area fill="#e1e1e1"/>
+	</rule>
+	
+	<rule e="way" k="landuse" v="cemetery">
+		<area fill="#aacbaf"/>
+		<rule e="way" k="*" v="*" zoom-min="15">
+			<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="2.50"/>
+		</rule>
+	</rule>
+	
+	<rule e="way" k="leisure" v="park">
+		<area fill="#cdf7c9"/>
+	</rule>
+	<rule e="way" k="leisure" v="recreation_ground">
+		<area fill="#dffce2"/>
+	</rule>
+	<rule e="way" k="leisure" v="playground|fitness_station">
+		<area fill="#dffce2"/>
+	</rule>
+	
+	<rule e="way" k="landuse" v="forest">
+		<area fill="#acd29c"/>
+	</rule>
+	
+	<rule e="way" k="natural" v="wood">
+		<area fill="#9dca8a"/>
+	</rule>
+	<rule e="way" k="natural" v="scrub">
+		<area fill="#c8d7ab"/>
+	</rule>
+	<rule e="way" k="natural" v="grassland">
+		<area fill="#cdebb0"/>
+	</rule>
+	<rule e="way" k="natural" v="heath">
+		<area fill="#d6d99f"/>
+	</rule>
+	<rule e="way" k="natural" v="beach|shoal">
+		<area fill="#fff1ba"/>
+	</rule>
+	<rule e="way" k="natural" v="sand">
+		<area fill="#f5e9c6"/>
+	</rule>
+	<rule e="way" k="natural" v="bare_rock">
+		<area fill="#eee5dc"/>
+	</rule>
+	<rule e="way" k="natural" v="scree|shingle">
+		<area fill="#eee5dc"/>
+	</rule>
+
+	<rule e="way" k="contour" v="elevation">
+		<rule e="way" k="contour_ext" v="elevation_minor">
+			<line stroke="#A07F5F" stroke-width="0.4" stroke-linecap="butt"/>
+		</rule>
+		<rule e="way" k="contour_ext" v="elevation_medium">
+			<line stroke="#A07F5F" stroke-width="0.6" stroke-linecap="butt"/>
+			<pathText k="ele" font-size="20" fill="#A07F5F" stroke="#ffffff" stroke-width="2.50"/>
+		</rule>
+		<rule e="way" k="contour_ext" v="elevation_major">
+			<line stroke="#A07F5F" stroke-width="0.8" stroke-linecap="butt"/>
+			<pathText k="ele" font-size="20" fill="#A07F5F" stroke="#ffffff" stroke-width="2.50"/>
+		</rule>
+	</rule>
+	
+	<rule e="way" k="natural" v="water">
+		<area fill="#aad3df"/>
+	</rule>
+
+	<rule e="way" k="waterway" v="river|canal">
+		<line stroke="#aad3df" stroke-width="2"/>
+		<pathText k="name" font-size="22" fill="#5787b7" stroke="#ffffff" stroke-width="3.00"/>
+	</rule>
+	<rule e="way" k="waterway" v="stream|ditch|drain">
+		<line stroke="#aad3df" stroke-width="1"/>
+		<pathText k="name" font-size="18" fill="#5787b7" stroke="#ffffff" stroke-width="3.00"/>
+	</rule>
+	
+	<rule e="way" k="water" v="lake" zoom-min="13">
+		<caption k="name" font-style="bold" font-size="18" fill="#5787b7" stroke="#ffffff" stroke-width="3.00"/>
+	</rule>
+
+	<rule e="way" k="jel" v ="ltmp">
+		<line stroke="#6c207e" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="but">
+		<line stroke="#050505" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="ll">
+		<line stroke="#ac31d8" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="lm">
+		<line stroke="#6c207e" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="t">
+		<line stroke="#b0aaa0" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="seml">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="stmp">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="satl">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="salp">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="sbor">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="smz">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="sgy">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="stj">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="ste">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="stm">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="s+">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="s3">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="s4">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="sq">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="sb">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="sl">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="sc">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="st">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="sm">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="s">
+		<line stroke="#ffcc00" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="zeml">
+		<line stroke="#008000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="ztmp">
+		<line stroke="#008000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="zatl">
+		<line stroke="#008000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="zbor">
+		<line stroke="#008000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="zut">
+		<line stroke="#008000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="z+">
+		<line stroke="#008000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="z3">
+		<line stroke="#008000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="z4">
+		<line stroke="#008000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="zq">
+		<line stroke="#008000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="zb">
+		<line stroke="#008000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="zl">
+		<line stroke="#008000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="zc">
+		<line stroke="#008000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="zt">
+		<line stroke="#008000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="zm">
+		<line stroke="#008000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="z">
+		<line stroke="#008000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="peml">
+		<line stroke="#ff0000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="ptmp">
+		<line stroke="#ff0000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="patl">
+		<line stroke="#ff0000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="palp">
+		<line stroke="#ff0000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="pbor">
+		<line stroke="#ff0000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="p+">
+		<line stroke="#ff0000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="p3">
+		<line stroke="#ff0000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="p4">
+		<line stroke="#ff0000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="pq">
+		<line stroke="#ff0000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="pb">
+		<line stroke="#ff0000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="pl">
+		<line stroke="#ff0000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="pc">
+		<line stroke="#ff0000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="pt">
+		<line stroke="#ff0000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="pm">
+		<line stroke="#ff0000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="p">
+		<line stroke="#ff0000" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="kpec">
+		<line stroke="#0000ff" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="keml">
+		<line stroke="#0000ff" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="ktmp">
+		<line stroke="#0000ff" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="katl">
+		<line stroke="#0000ff" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="kbor">
+		<line stroke="#0000ff" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="k+">
+		<line stroke="#0000ff" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="k3">
+		<line stroke="#0000ff" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="k4">
+		<line stroke="#0000ff" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="kq">
+		<line stroke="#0000ff" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="kb">
+		<line stroke="#0000ff" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="kl">
+		<line stroke="#0000ff" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="kt">
+		<line stroke="#0000ff" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="km">
+		<line stroke="#0000ff" stroke-width="5"/>
+	</rule>
+	<rule e="way" k="jel" v ="k">
+		<line stroke="#0000ff" stroke-width="5"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_k" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_k.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_k+" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_k+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_k3" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_k3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_k4" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_k4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_kq" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_kq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_kb" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_kb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_kl" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_kl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_kpec" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_kpec.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_p" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_p.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_p+" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_p+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_p3" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_p3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_p4" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_p4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_pq" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_pq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_pb" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_pb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_pl" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_pl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_s" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_s.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_s+" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_s+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_s3" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_s3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_s4" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_s4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_sq" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_sq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_sb" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_sb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_sl" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_sl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_z" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_z.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_z+" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_z+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_z3" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_z3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_z4" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_z4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_zq" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_zq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_zb" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_zb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_zl" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_zl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_keml" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_keml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_ktmp" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_ktmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_kt" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_kt.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_katl" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_katl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_pc" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_pc.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_peml" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_peml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_ptmp" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_ptmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_pt" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_pt.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_patl" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_patl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_sc" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_sc.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_seml" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_seml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_stmp" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_stmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_st" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_st.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_satl" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_satl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_zc" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_zc.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_zeml" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_zeml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_ztmp" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_ztmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_zt" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_zt.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_zatl" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_zatl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_ll" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_ll.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_t" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_t.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_ltmp" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_ltmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_lm" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_lm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_km" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_km.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_pm" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_pm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_sm" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_sm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_zm" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_zm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_smz" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_smz.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_sgy" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_sgy.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_stj" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_stj.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_ste" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_ste.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_stm" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_stm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_palp" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_palp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_salp" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_salp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_but" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_but.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_kbor" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_kbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_pbor" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_pbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_sbor" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_sbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_zbor" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_zbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l1_zut" zoom-min="14" zoom-max="14" >
+		<symbol src="file:/symbol/jel_zut.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_k" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_k.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_k+" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_k+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_k3" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_k3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_k4" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_k4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_kq" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_kq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_kb" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_kb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_kl" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_kl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_kpec" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_kpec.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_p" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_p.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_p+" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_p+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_p3" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_p3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_p4" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_p4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_pq" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_pq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_pb" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_pb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_pl" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_pl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_s" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_s.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_s+" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_s+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_s3" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_s3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_s4" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_s4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_sq" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_sq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_sb" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_sb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_sl" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_sl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_z" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_z.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_z+" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_z+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_z3" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_z3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_z4" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_z4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_zq" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_zq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_zb" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_zb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_zl" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_zl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_keml" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_keml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_ktmp" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_ktmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_kt" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_kt.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_katl" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_katl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_pc" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_pc.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_peml" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_peml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_ptmp" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_ptmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_pt" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_pt.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_patl" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_patl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_sc" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_sc.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_seml" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_seml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_stmp" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_stmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_st" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_st.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_satl" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_satl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_zc" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_zc.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_zeml" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_zeml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_ztmp" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_ztmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_zt" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_zt.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_zatl" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_zatl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_ll" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_ll.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_t" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_t.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_ltmp" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_ltmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_lm" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_lm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_km" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_km.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_pm" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_pm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_sm" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_sm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_zm" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_zm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_smz" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_smz.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_sgy" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_sgy.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_stj" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_stj.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_ste" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_ste.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_stm" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_stm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_palp" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_palp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_salp" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_salp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_but" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_but.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_kbor" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_kbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_pbor" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_pbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_sbor" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_sbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_zbor" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_zbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l2_zut" zoom-min="15" zoom-max="15" >
+		<symbol src="file:/symbol/jel_zut.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_k" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_k.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_k+" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_k+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_k3" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_k3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_k4" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_k4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_kq" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_kq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_kb" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_kb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_kl" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_kl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_kpec" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_kpec.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_p" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_p.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_p+" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_p+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_p3" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_p3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_p4" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_p4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_pq" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_pq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_pb" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_pb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_pl" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_pl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_s" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_s.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_s+" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_s+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_s3" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_s3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_s4" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_s4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_sq" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_sq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_sb" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_sb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_sl" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_sl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_z" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_z.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_z+" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_z+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_z3" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_z3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_z4" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_z4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_zq" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_zq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_zb" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_zb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_zl" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_zl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_keml" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_keml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_ktmp" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_ktmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_kt" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_kt.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_katl" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_katl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_pc" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_pc.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_peml" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_peml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_ptmp" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_ptmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_pt" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_pt.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_patl" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_patl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_sc" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_sc.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_seml" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_seml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_stmp" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_stmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_st" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_st.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_satl" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_satl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_zc" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_zc.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_zeml" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_zeml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_ztmp" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_ztmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_zt" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_zt.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_zatl" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_zatl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_ll" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_ll.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_t" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_t.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_ltmp" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_ltmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_lm" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_lm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_km" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_km.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_pm" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_pm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_sm" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_sm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_zm" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_zm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_smz" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_smz.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_sgy" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_sgy.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_stj" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_stj.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_ste" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_ste.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_stm" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_stm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_palp" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_palp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_salp" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_salp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_but" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_but.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_kbor" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_kbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_pbor" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_pbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_sbor" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_sbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_zbor" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_zbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l3_zut" zoom-min="16" zoom-max="16" >
+		<symbol src="file:/symbol/jel_zut.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_k" zoom-min="17" >
+		<symbol src="file:/symbol/jel_k.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_k+" zoom-min="17" >
+		<symbol src="file:/symbol/jel_k+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_k3" zoom-min="17" >
+		<symbol src="file:/symbol/jel_k3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_k4" zoom-min="17" >
+		<symbol src="file:/symbol/jel_k4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_kq" zoom-min="17" >
+		<symbol src="file:/symbol/jel_kq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_kb" zoom-min="17" >
+		<symbol src="file:/symbol/jel_kb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_kl" zoom-min="17" >
+		<symbol src="file:/symbol/jel_kl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_kpec" zoom-min="17" >
+		<symbol src="file:/symbol/jel_kpec.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_p" zoom-min="17" >
+		<symbol src="file:/symbol/jel_p.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_p+" zoom-min="17" >
+		<symbol src="file:/symbol/jel_p+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_p3" zoom-min="17" >
+		<symbol src="file:/symbol/jel_p3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_p4" zoom-min="17" >
+		<symbol src="file:/symbol/jel_p4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_pq" zoom-min="17" >
+		<symbol src="file:/symbol/jel_pq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_pb" zoom-min="17" >
+		<symbol src="file:/symbol/jel_pb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_pl" zoom-min="17" >
+		<symbol src="file:/symbol/jel_pl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_s" zoom-min="17" >
+		<symbol src="file:/symbol/jel_s.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_s+" zoom-min="17" >
+		<symbol src="file:/symbol/jel_s+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_s3" zoom-min="17" >
+		<symbol src="file:/symbol/jel_s3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_s4" zoom-min="17" >
+		<symbol src="file:/symbol/jel_s4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_sq" zoom-min="17" >
+		<symbol src="file:/symbol/jel_sq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_sb" zoom-min="17" >
+		<symbol src="file:/symbol/jel_sb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_sl" zoom-min="17" >
+		<symbol src="file:/symbol/jel_sl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_z" zoom-min="17" >
+		<symbol src="file:/symbol/jel_z.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_z+" zoom-min="17" >
+		<symbol src="file:/symbol/jel_z+.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_z3" zoom-min="17" >
+		<symbol src="file:/symbol/jel_z3.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_z4" zoom-min="17" >
+		<symbol src="file:/symbol/jel_z4.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_zq" zoom-min="17" >
+		<symbol src="file:/symbol/jel_zq.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_zb" zoom-min="17" >
+		<symbol src="file:/symbol/jel_zb.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_zl" zoom-min="17" >
+		<symbol src="file:/symbol/jel_zl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_keml" zoom-min="17" >
+		<symbol src="file:/symbol/jel_keml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_ktmp" zoom-min="17" >
+		<symbol src="file:/symbol/jel_ktmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_kt" zoom-min="17" >
+		<symbol src="file:/symbol/jel_kt.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_katl" zoom-min="17" >
+		<symbol src="file:/symbol/jel_katl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_pc" zoom-min="17" >
+		<symbol src="file:/symbol/jel_pc.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_peml" zoom-min="17" >
+		<symbol src="file:/symbol/jel_peml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_ptmp" zoom-min="17" >
+		<symbol src="file:/symbol/jel_ptmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_pt" zoom-min="17" >
+		<symbol src="file:/symbol/jel_pt.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_patl" zoom-min="17" >
+		<symbol src="file:/symbol/jel_patl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_sc" zoom-min="17" >
+		<symbol src="file:/symbol/jel_sc.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_seml" zoom-min="17" >
+		<symbol src="file:/symbol/jel_seml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_stmp" zoom-min="17" >
+		<symbol src="file:/symbol/jel_stmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_st" zoom-min="17" >
+		<symbol src="file:/symbol/jel_st.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_satl" zoom-min="17" >
+		<symbol src="file:/symbol/jel_satl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_zc" zoom-min="17" >
+		<symbol src="file:/symbol/jel_zc.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_zeml" zoom-min="17" >
+		<symbol src="file:/symbol/jel_zeml.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_ztmp" zoom-min="17" >
+		<symbol src="file:/symbol/jel_ztmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_zt" zoom-min="17" >
+		<symbol src="file:/symbol/jel_zt.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_zatl" zoom-min="17" >
+		<symbol src="file:/symbol/jel_zatl.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_ll" zoom-min="17" >
+		<symbol src="file:/symbol/jel_ll.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_t" zoom-min="17" >
+		<symbol src="file:/symbol/jel_t.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_ltmp" zoom-min="17" >
+		<symbol src="file:/symbol/jel_ltmp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_lm" zoom-min="17" >
+		<symbol src="file:/symbol/jel_lm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_km" zoom-min="17" >
+		<symbol src="file:/symbol/jel_km.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_pm" zoom-min="17" >
+		<symbol src="file:/symbol/jel_pm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_sm" zoom-min="17" >
+		<symbol src="file:/symbol/jel_sm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_zm" zoom-min="17" >
+		<symbol src="file:/symbol/jel_zm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_smz" zoom-min="17" >
+		<symbol src="file:/symbol/jel_smz.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_sgy" zoom-min="17" >
+		<symbol src="file:/symbol/jel_sgy.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_stj" zoom-min="17" >
+		<symbol src="file:/symbol/jel_stj.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_ste" zoom-min="17" >
+		<symbol src="file:/symbol/jel_ste.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_stm" zoom-min="17" >
+		<symbol src="file:/symbol/jel_stm.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_palp" zoom-min="17" >
+		<symbol src="file:/symbol/jel_palp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_salp" zoom-min="17" >
+		<symbol src="file:/symbol/jel_salp.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_but" zoom-min="17" >
+		<symbol src="file:/symbol/jel_but.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_kbor" zoom-min="17" >
+		<symbol src="file:/symbol/jel_kbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_pbor" zoom-min="17" >
+		<symbol src="file:/symbol/jel_pbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_sbor" zoom-min="17" >
+		<symbol src="file:/symbol/jel_sbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_zbor" zoom-min="17" >
+		<symbol src="file:/symbol/jel_zbor.png"/>
+	</rule>
+	<rule e="node" k="jel" v="l4_zut" zoom-min="17" >
+		<symbol src="file:/symbol/jel_zut.png"/>
+	</rule>
+	
+	<rule e="node" k="railway" v="station|halt|tram_stop" zoom-min="16">
+		<symbol src="file:/symbol/railway_stop.png" scale="1"/>
+	</rule>
+	
+	<rule e="node" k="railway" v="station|halt|tram_stop" zoom-min="18">
+		<caption k="name" dy="30" font-style="bold" font-size="18" fill="#7981b0" stroke="#ffffff" stroke-width="2.0"/>
+	</rule>
+	
+	<rule e="node" k="highway" v="bus_stop" zoom-min="16">
+		<symbol src="file:/symbol/bus_stop.png" scale="1"/>
+	</rule>
+	
+	<rule e="node" k="highway" v="bus_stop" zoom-min="18">
+		<caption k="name" dy="30" font-style="bold" font-size="18" fill="#0092da" stroke="#ffffff" stroke-width="2.0"/>
+	</rule>
+	
+	<rule e="way" k="highway" v="cycleway">
+		<line stroke="#000000" stroke-width="1" stroke-dasharray="10.0,10.0" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+
+	<rule e="way" k="highway" v="busway">
+		<line stroke="#adadad" stroke-width="2" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="2" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="road">
+		<line stroke="#000000" stroke-width="1" stroke-dasharray="10.0,10.0" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="raceway">
+		<line stroke="#adadad" stroke-width="2" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="1.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="escape">
+		<line stroke="#000000" stroke-width="1" stroke-dasharray="10.0,10.0" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="bus_guideway">
+		<line stroke="#000000" stroke-width="1" stroke-dasharray="10.0,10.0" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="track">
+		<!-- 
+		<line stroke="#adadad" stroke-width="2" stroke-linecap="butt" />
+		<line stroke="#ffffff" stroke-width="1.5" stroke-linecap="butt" /> 
+		-->
+		<line stroke="#000000" stroke-width="1" stroke-dasharray="10.0,10.0" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="pedestrian">
+		<line stroke="#adadad" stroke-width="2" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="1.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="service">
+		<line stroke="#adadad" stroke-width="2" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="1.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="living_street">
+		<line stroke="#adadad" stroke-width="2" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="1.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+
+	<rule e="way" k="highway" v="residential">
+		<line stroke="#adadad" stroke-width="2" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="1.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="unclassified">
+		<line stroke="#adadad" stroke-width="2" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="1.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="tertiary_link">
+		<line stroke="#adadad" stroke-width="3" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="2.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="tertiary">
+		<line stroke="#adadad" stroke-width="3" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="2.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="secondary_link">
+		<line stroke="#adadad" stroke-width="3" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="2.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="secondary">
+		<line stroke="#adadad" stroke-width="3" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="2.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="primary_link">
+		<line stroke="#adadad" stroke-width="4" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="3.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="primary">
+		<line stroke="#adadad" stroke-width="4" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="3.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="trunk_link">
+		<line stroke="#adadad" stroke-width="4" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="3.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="trunk">
+		<line stroke="#adadad" stroke-width="4" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="3.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="motorway_link">
+		<line stroke="#adadad" stroke-width="4" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="3.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="motorway">
+		<line stroke="#adadad" stroke-width="4" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="3.5" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+
+	<rule e="way" k="highway" v="path">
+		<line stroke="#000000" stroke-width="0.5" stroke-dasharray="10.0,10.0" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="corridor">
+		<line stroke="#000000" stroke-width="1" stroke-dasharray="10.0,10.0" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="steps">
+		<line stroke="#000000" stroke-width="1" stroke-dasharray="10.0,10.0" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	<rule e="way" k="highway" v="bridleway">
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+		<line stroke="#000000" stroke-width="1" stroke-dasharray="10.0,10.0" stroke-linecap="butt"/>
+	</rule>
+	<rule e="way" k="highway" v="footway">
+		<line stroke="#000000" stroke-width="0.4" stroke-dasharray="10.0,10.0" stroke-linecap="butt"/>
+		<pathText k="name" font-style="bold" font-size="20" stroke="#ffffff" stroke-width="4.00"/>
+	</rule>
+	
+	<rule e="way" k="railway" v="rail">
+		<line stroke="#707070" stroke-width="1.3" stroke-linecap="butt"/>
+		<line stroke="#ffffff" stroke-width="1" stroke-dasharray="12.5,12.5" stroke-linecap="butt"/>
+	</rule>
+	<rule e="way" k="railway" v="light_rail">
+		<line stroke="#444444" stroke-width="0.8" stroke-linecap="butt"/>
+	</rule>
+	<rule e="way" k="railway" v="tram">
+		<line stroke="#4c4c4b" stroke-width="0.8" stroke-linecap="butt"/>
+	</rule>
+	<rule e="way" k="railway" v="narrow_gauge">
+		<line stroke="#444444" stroke-width="0.8" stroke-linecap="butt"/>
+	</rule>
+	
+	<rule e="node" k="natural" v="peak" zoom-min="13">
+		<symbol src="file:/symbol/natural_peak.png" scale="1"/>
+		<caption k="ele" dy="35" font-style="bold" font-size="18" fill="#A07F5F" stroke="#ffffff" stroke-width="2.50"/>
+		<caption k="name" dy="-20" font-style="bold" font-size="18" fill="#A07F5F" stroke="#ffffff" stroke-width="2.50"/>
+	</rule>
+	
+	<rule e="node" k="tourism" v="viewpoint" zoom-min="13">
+		<symbol src="file:/symbol/tourism_viewpoint.png" scale="1"/>
+		<caption k="name" dy="35" font-style="bold" font-size="18" fill="#734a08" stroke="#ffffff" stroke-width="2.50"/>
+	</rule>
+	
+	<rule e="node" k="amenity" v="drinking_water" zoom-min="13">
+		<symbol src="file:/symbol/amenity_drinking_water.png" scale="1"/>
+		<caption k="name" dy="35" font-style="bold" font-size="18" fill="#734a08" stroke="#ffffff" stroke-width="2.50"/>
+	</rule>
+	
+	<rule e="node" k="amenity" v="parking" zoom-min="13">
+		<symbol src="file:/symbol/amenity_parking.png" scale="1"/>
+	</rule>
+	
+	<rule e="way" k="amenity" v="parking" zoom-min="13">
+		<symbol src="file:/symbol/amenity_parking.png" scale="1"/>
+	</rule>
+	
+	<rule e="node" k="place" v="hamlet" zoom-min="8" zoom-max="15">
+		<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="3.00"/>
+	</rule>
+	<rule e="node" k="place" v="borough" zoom-min="11" zoom-max="15">
+		<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="3.00"/>
+	</rule>
+	<rule e="node" k="place" v="neighbourhood" zoom-min="11" zoom-max="15">
+		<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="3.00"/>
+	</rule>
+	<rule e="node" k="place" v="suburb" zoom-min="11" zoom-max="15">
+		<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="3.00"/>
+	</rule>
+	<rule e="node" k="place" v="quarter" zoom-min="11" zoom-max="15">
+		<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="3.00"/>
+	</rule>
+	<rule e="node" k="place" v="village" zoom-min="5" zoom-max="15">
+		<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="3.00"/>
+	</rule>
+	<rule e="node" k="place" v="town" zoom-min="5" zoom-max="14">
+		<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff" stroke-width="3.00"/>
+	</rule>
+	<rule e="node" k="place" v="city" zoom-min="5" zoom-max="13">
+		<caption k="name" font-style="bold" font-size="20" fill="#000000" stroke="#ffffff" stroke-width="3.00"/>
+	</rule>
+</rendertheme>
