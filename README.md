@@ -1,7 +1,9 @@
 # Locus túratérkép
-Offile túratérkép a Locus nevű android aklamazáshoz
-
-
+Offile túratérkép a Locus nevű android aklamazáshoz.
+![](screenshots/1.jpg)
+![](screenshots/2.jpg)
+![](screenshots/3.jpg)
+![](screenshots/4.jpg)
 
 ## Telepítés folyamat:
 1. A térképfájl felmásolása a telefonon az alábbi mappába  
