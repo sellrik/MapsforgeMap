@@ -1,3 +1,15 @@
+# Locus túratérkép
+Offile túratérkép a Locus nevű android aklamazáshoz
+
+
+
+## Telepítés folyamat:
+1. A térképfájl felmásolása a telefonon az alábbi mappába  
+\Locus\mapsVector
+2. Sablon (themes\test.xml és themes\symbol mappa) felmásolása az alábbi mappába:  
+\Locus\mapsVector\_themes\test\
+
+## Térkép készítés
 Környezet előkészítése, telepítés: TODO
 1. Osmosis: https://github.com/mapsforge/mapsforge/blob/master/docs/Getting-Started-Map-Writer.md
 2. phyghtmap: http://katze.tfiu.de/projects/phyghtmap/#Download
@@ -52,9 +64,3 @@ A tag-mapping.xml fájl tartalmazza a térkép által támogatott elemeket. Az �
 ```
 lib\osmosis\bin\osmosis.bat --read-xml data\map_srtm_trailmarks.osm --mw file=data\final.map tag-conf-file=tag-mapping.xml
 ```
-
-Telepítés folyamat:
-1. A térképfájl felmásolása a telefonon az alábbi mappába  
-\Locus\mapsVector
-2. Sablon (themes\test.xml és themes\symbol mappa) felmásolása az alábbi mappába:  
-\Locus\mapsVector\_themes\test\
