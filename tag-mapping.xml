@@ -531,6 +531,7 @@
 		<osm-tag key="tourism" value="camp_site" zoom-appear="17" />
 		<osm-tag key="leisure" value="picnic_table" zoom-appear="17" />
 		<osm-tag key="leisure" value="firepit" zoom-appear="17" />
+		<osm-tag key="amenity" value="hunting_stand" zoom-appear="17" />
 
         <osm-tag key="emergency" value="phone" zoom-appear="16" />
 
@@ -696,7 +697,9 @@
         <osm-tag key="natural" value="water" zoom-appear="8" />
         <osm-tag key="natural" value="wetland" zoom-appear="12" />
         <osm-tag key="natural" value="wood" zoom-appear="8" />
-		
+		<osm-tag key="natural" value="bare_rock" zoom-appear="8" />
+		<osm-tag key="natural" value="cliff" zoom-appear="12" />	
+	
 		<osm-tag key="water" value="lake" zoom-appear="8" />
 
         <osm-tag key="waterway" value="canal" zoom-appear="10" />
@@ -789,6 +792,7 @@
         <osm-tag key="amenity" value="theatre" zoom-appear="14" />
         <osm-tag key="amenity" value="toilets" zoom-appear="17" />
         <osm-tag key="amenity" value="university" zoom-appear="13" />
+		<osm-tag key="tourism" value="picnic_site" zoom-appear="17" />
 
         <osm-tag key="religion" renderable="false" value="buddhist" />
         <osm-tag key="religion" renderable="false" value="christian" />
@@ -1079,6 +1083,8 @@
 
         <osm-tag key="man_made" value="pier" zoom-appear="15" />
 		<osm-tag key="man_made" value="bridge" zoom-appear="15" />
+		<osm-tag key="man_made" value="water_works" zoom-appear="12" />
+		<osm-tag key="man_made" value="wastewater_plant" zoom-appear="12" />
 
         <osm-tag key="military" value="airfield" zoom-appear="12" />
         <osm-tag key="military" value="barracks" zoom-appear="12" />
