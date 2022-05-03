@@ -1,11 +1,18 @@
 # Locus túratérkép
 Offile túratérkép a Locus nevű android aklamazáshoz.
+
 ![](screenshots/1.jpg)
 ![](screenshots/2.jpg)
 ![](screenshots/3.jpg)
 ![](screenshots/4.jpg)
 
 ## Telepítés folyamat:
+
+Téma letöltése:
+https://1drv.ms/u/s!Au5_c7dZYjsog89hji51BwDg1_n7SA?e=cEf5cH
+
+Térkép letöltése:
+
 1. A térképfájl felmásolása a telefonon az alábbi mappába  
 \Locus\mapsVector
 2. Sablon (themes\test.xml és themes\symbol mappa) felmásolása az alábbi mappába:  
